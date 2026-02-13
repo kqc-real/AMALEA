@@ -9,6 +9,18 @@ import plotly.express as px
 import seaborn as sns
 from typing import Tuple
 
+# Optional: try loading a production model from MLflow Model Registry, fallback to local joblib or training
+import os
+import joblib
+try:
+    import mlflow
+    import mlflow.pyfunc
+except Exception:
+    mlflow = None
+
+MODEL_REGISTRY_NAME = "AMALEA_Best_Classifier"
+LOCAL_FALLBACK = "04_Advanced_Algorithms/outputs/AMALEA_Best_Classifier.joblib"
+
 st.set_page_config(page_title="Iris ML Predictor", page_icon="🌸")
 
 st.title("🌸🤖 Iris ML Vorhersage-App")
@@ -38,10 +50,10 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=test_size, random_state=random_state
 )
 
-# === MODELL TRAINIEREN ===
+# === MODELL LADEN / TRAINIEREN ===
 @st.cache_data
 def train_model(test_size: float, random_state: int):
-    """Trainiert das ML-Modell mit gegebenen Parametern"""
+    """Trainiert das ML-Modell mit gegebenen Parametern (Fallback)"""
     X_train_cached, X_test_cached, y_train_cached, y_test_cached = train_test_split(
         X, y, test_size=test_size, random_state=random_state
     )
@@ -56,7 +68,43 @@ def train_model(test_size: float, random_state: int):
     
     return model, train_accuracy, test_accuracy
 
-model, train_acc, test_acc = train_model(test_size, random_state)
+
+@st.cache_data
+def load_production_or_local_model():
+    """Try MLflow Model Registry -> local joblib -> fallback to training"""
+    # 1) Try MLflow Model Registry
+    if mlflow is not None:
+        try:
+            model_uri = f"models:/{MODEL_REGISTRY_NAME}/Production"
+            prod_model = mlflow.pyfunc.load_model(model_uri)
+            print(f"Loaded production model from MLflow: {model_uri}")
+            return prod_model, None, None
+        except Exception:
+            pass
+
+    # 2) Try local joblib fallback
+    if os.path.exists(LOCAL_FALLBACK):
+        try:
+            mdl = joblib.load(LOCAL_FALLBACK)
+            print(f"Loaded local fallback model: {LOCAL_FALLBACK}")
+            return mdl, None, None
+        except Exception:
+            pass
+
+    # 3) Fallback: train a fresh model (default behavior)
+    print("No production/local model found — training a default RandomForest model.")
+    return train_model(test_size, random_state)
+
+# Attempt to load production/local model first
+loaded = load_production_or_local_model()
+if loaded is None:
+    model, train_acc, test_acc = train_model(test_size, random_state)
+else:
+    # If MLflow pyfunc model returned, it predicts with .predict
+    model, train_acc, test_acc = loaded
+    if model is None:
+        model, train_acc, test_acc = train_model(test_size, random_state)
+
 
 # === HAUPTBEREICH IN TABS ===
 tab1, tab2, tab3 = st.tabs(["🎯 Vorhersage", "📊 Modell-Performance", "📋 Daten-Explorer"])
