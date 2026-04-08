@@ -1,55 +1,51 @@
-# 📊 Woche 2: Interactive Data Apps
+# Woche 2: Streamlit und Pandas
 
-> 🚀 **Dein Ziel:**
->
-> Datenanalyse ist gut, **Data Apps** sind besser.
-> In dieser Woche lernst du, wie du deine Python-Skripte in interaktive Web-Anwendungen verwandelst, die jeder im Browser nutzen kann.
+Woche 2 zeigt, wie aus Datenanalyse eine einfache interaktive Anwendung
+wird. Der Schwerpunkt liegt auf Pandas, dem Ausführungsmodell von
+Streamlit und dem Aufbau kleiner Dashboards.
 
-## 💡 Der Tech-Stack
+## Lernziele
 
-1.  **Pandas:** Deine In-Memory Datenbank. Wir schauen uns an, wie man Daten *vektorisiert* verarbeitet (statt langsamer Loops).
-2.  **Streamlit:** Das Frontend. Wir lernen das *Execution Model* (Rerun-Loop) und *State Management* kennen.
-3.  **Plotly:** Für interaktive Grafiken, die in der Web-App zoombare sind.
+- Daten mit Pandas effizient verarbeiten
+- das Streamlit-Rerun-Modell verstehen
+- einfache Interaktionselemente gezielt einsetzen
+- kleine Datenansichten und Visualisierungen in einer App zusammenführen
 
----
+## Materialien
 
-## 🗺️ Deine Roadmap
+- `01_Erste_Streamlit_App_fixed.ipynb`: Einführung in Streamlit,
+  Datenfluss und Vektorisierung
+- `example_app.py`: Referenz-App mit Struktur, Caching und typischen Widgets
+- `hello_streamlit.py`: kompakter Einstieg in einfache Streamlit-Komponenten
 
-### 1️⃣ Theorie & Deep Dive
-- **`01_Erste_Streamlit_App_fixed.ipynb`**
-  - *Lernziel:* Verstehen, wie Streamlit "unter der Haube" funktioniert.
-  - *Highlight:* Pandas Vektorisierung vs. Loops.
-  - *Output:* Generiert automatisch `Dockerfile` und `requirements.txt`.
+## Empfohlene Reihenfolge
 
-### 2️⃣ Praxis & Code
-- **`example_app.py`**
-  - *Was:* Eine Referenz-Implementierung einer Streamlit-App.
-  - *Features:* Caching (`@st.cache_data`), Type Hints, Layouts.
-  - *Aufgabe:* Starte sie und analysiere den Code.
+1. `01_Erste_Streamlit_App_fixed.ipynb`
+2. `hello_streamlit.py`
+3. `example_app.py`
 
----
+## Start
 
-## 🛠️ Setup & Start
-
-### Option A: Via Docker (Empfohlen) 🐳
+### Lokal
 
 ```bash
-# Startet die App im Container
-docker-compose up --build
-
-# App öffnen: http://localhost:8501
-```
-
-### Option B: Lokal 💻
-
-```bash
-# 1. Dependencies installieren
-pip install -r 02_Streamlit_und_Pandas/requirements.txt
-
-# 2. App starten
+cd 02_Streamlit_und_Pandas
+pip install -r requirements.txt
 streamlit run example_app.py
 ```
 
----
+### Mit Docker
 
-**Happy Coding!** 🚀
+```bash
+docker-compose up --build
+```
+
+## Hinweise
+
+- Streamlit führt das Skript bei jeder Interaktion erneut aus. Dieser
+  Ablauf sollte in Übungen explizit thematisiert werden.
+- Für größere Datenmengen sind Vektorisierung und Caching wichtiger als
+  komplexe Oberflächen.
+- Für erste Übungen reicht meist `hello_streamlit.py`;
+  `example_app.py` eignet sich besser als Referenz für Struktur und
+  Ausbau.

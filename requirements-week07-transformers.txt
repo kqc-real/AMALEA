@@ -1,0 +1,3 @@
+-r requirements-week07.txt
+transformers>=4.57.3
+torch>=2.9.1,<3.0

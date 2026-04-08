@@ -1,58 +1,57 @@
 
-# 🤖 Woche 3: Machine Learning Engineering
+# Woche 3: Klassisches Machine Learning
 
-> 🚀 **Dein Ziel:**
->
-> Vom Daten-Analysten zum **ML Engineer**.
-> Du lernst, wie man nicht nur Daten anschaut, sondern Systeme baut, die aus Daten lernen und Vorhersagen treffen.
+Woche 3 führt in den praktischen Einsatz klassischer
+Machine-Learning-Verfahren ein. Im Mittelpunkt stehen Training,
+Vorhersage, Modellvergleich und die Einbindung in kleine Anwendungen.
 
-## 💡 Der Tech-Stack
+## Lernziele
 
-1.  **Scikit-Learn:** Das Schweizer Taschenmesser für klassisches ML.
-2.  **Streamlit:** Um deine Modelle interaktiv bedienbar zu machen.
-3.  **Joblib:** Um trainierte Modelle zu speichern und zu laden.
+- den Unterschied zwischen Training und Inferenz erklären
+- Train-Test-Split und Overfitting einordnen
+- Klassifikation und Regression unterscheiden
+- einfache Modelle mit scikit-learn trainieren und auswerten
+- ML-Funktionalität in Streamlit-Anwendungen einbinden
 
----
+## Materialien
 
-## 🗺️ Deine Roadmap
+- `02_ML_in_Streamlit_fixed.ipynb`: Grundkonzepte zu `fit()`,
+  `predict()`, Evaluation und Modellvergleich
+- `iris_ml_app.py`: Klassifikationsbeispiel mit interaktiven Eingaben
+- `housing_regression_app.py`: Regressionsbeispiel mit Modellvergleich
 
-### 1️⃣ Theorie & Training
-- **`02_ML_in_Streamlit_fixed.ipynb`**
-  - *Lernziel:* Verstehen, wie `fit()` und `predict()` funktionieren.
-  - *Konzepte:* Train/Test Split, Overfitting, Feature Importance.
-  - *Output:* Generiert zwei vollständige ML-Apps.
+## Empfohlene Reihenfolge
 
-### 2️⃣ Praxis: Klassifikation
-- **`iris_ml_app.py`**
-  - *Was:* Eine App, die Blumenarten vorhersagt.
-  - *Features:* Interaktive Parameter-Einstellung, Live-Training.
+1. `02_ML_in_Streamlit_fixed.ipynb`
+2. `iris_ml_app.py`
+3. `housing_regression_app.py`
 
-### 3️⃣ Praxis: Regression
-- **`housing_regression_app.py`**
-  - *Was:* Eine App zur Immobilienpreis-Schätzung.
-  - *Features:* Vergleich von Algorithmen (Linear Regression vs. Random Forest).
+## Start
 
----
-
-## 🛠️ Setup & Start
-
-### Option A: Via Docker (Empfohlen) 🐳
+### Lokal
 
 ```bash
-# Startet die Umgebung
+cd 03_Machine_Learning
+pip install -r requirements.txt
+streamlit run iris_ml_app.py
+```
+
+Für das Regressionsbeispiel:
+
+```bash
+cd 03_Machine_Learning
+streamlit run housing_regression_app.py
+```
+
+### Mit Docker
+
+```bash
 docker-compose up --build
-
-# App öffnen: http://localhost:8501
 ```
 
-### Option B: Lokal 💻
+## Hinweise
 
-```bash
-# 1. Dependencies installieren (Woche 3)
-pip install -r 03_Machine_Learning/requirements.txt
-
-# 2. App starten
-streamlit run 03_Machine_Learning/iris_ml_app.py
-# oder
-streamlit run 03_Machine_Learning/housing_regression_app.py
-```
+- Die Apps eignen sich gut, um Metriken, Eingabefeatures und
+  Modellverhalten im Plenum zu diskutieren.
+- Der didaktische Schwerpunkt sollte auf Modellverständnis liegen,
+  nicht auf möglichst vielen Algorithmen.

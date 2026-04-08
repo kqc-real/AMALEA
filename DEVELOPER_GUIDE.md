@@ -1,6 +1,10 @@
-# 🧑‍💻 Developer Guide
+<!-- markdownlint-disable MD013 MD022 MD031 MD032 MD058 MD060 -->
+# Developer Guide
 
-Konzentrierte technische Dokumentation für Aufbau, Betrieb und Entwicklung der AMALEA-Umgebung. Der Haupt-`README.md` bleibt schlanker und kursfokussiert.
+Technische Dokumentation für Aufbau, Betrieb und Entwicklung der
+AMALEA-Umgebung. Das Haupt-README bleibt bewusst allgemeiner und stärker
+auf den Kursablauf ausgerichtet. Für die konkrete Kursdurchführung
+ergänzt [DOZENTENLEITFADEN.md](DOZENTENLEITFADEN.md) diese Datei.
 
 ## Inhalt
 - [Architektur & Module](#architektur--module)
@@ -18,10 +22,11 @@ Konzentrierte technische Dokumentation für Aufbau, Betrieb und Entwicklung der 
 |-------|--------------|-----------|
 | Kurs Notebooks | Lern- und Demonstrationsinhalte (Jupyter Notebooks) | `01_Python_Grundlagen/` bis `07_Deployment_Portfolio/` |
 | Streamlit Apps | Interaktive Web-Anwendungen für ML-Modelle | `iris_ml_app.py`, `housing_regression_app.py` |
-| Executed Notebooks | Vorgefertigte, ausführbare Versionen | `executed_notebooks/` für Referenzimplementierungen |
+| Executed Notebooks | Referenzfassungen und erzeugte Ausgaben | `.nbconvert.ipynb`, `executed/`, `executed_notebooks/` |
 | Datasets & Tests | Daten für Übungen und Qualitätssicherung | `datasets/`, `tests/` |
 
-Die modulare Struktur ermöglicht wochenspezifische Installationen und skalierbare Entwicklung.
+Die modulare Struktur ermöglicht wochenspezifische Installationen und
+einen schrittweisen Betrieb im Kurs.
 
 ---
 ## Lokale Entwicklung (ohne Docker)
@@ -52,22 +57,24 @@ python -m ipykernel install --user --name amalea-venv \
 ```
 
 ### Wochenspezifische Installationen
-- **Wochen 01–03 (Basis)**: `pip install -r requirements.txt` (bereits in requirements.txt enthalten)
+- **Wochen 01–03 (Basis)**: `pip install -r requirements.txt`
+- **Woche 04 (Advanced Algorithms)**: `pip install -r requirements-week04.txt`
 - **Woche 05 (Deep Learning)**: `pip install -r requirements-week05.txt`
 - **Woche 06 (CV/NLP)**: `pip install -r requirements-week06.txt`
-- **Woche 07 (Deployment)**: `pip install -r requirements-week07.txt`
+- **Woche 07 (Deployment-Demo)**: `pip install -r requirements-week07.txt`
 
 ---
 ## Container & Services (Docker Compose)
 
-`docker-compose.yml` definiert Services mit Profiles für flexible Konfigurationen.
+`docker-compose.yml` definiert Services mit Profiles für flexible
+Konfigurationen.
 
 | Service | Zweck | Port (Host) | Profil | Abhängigkeiten |
 |---------|------|-------------|--------|---------------|
 | `jupyter-lab` | Vollständige Data/ML-Umgebung | 8888 | `full` | TF, Torch, OpenCV |
 | `jupyter-lab-slim` | Leichtgewicht (ohne TF/Torch/OpenCV) | 8889 | `slim` | Basis-Stack |
 | `streamlit-dev` | Vollständige Streamlit-Entwicklung | 8501 | `full` | Alle Deps |
-| `streamlit-slim` | Schnellstart für Tests | 8502 | `slim` | Minimale Deps |
+| `streamlit-slim` | schlanke Streamlit-Umgebung | 8502 | `slim` | Minimale Deps |
 | `mlflow` | Experiment-Tracking-Server | 5001 (→ 5000) | `full` | MLflow ≥3.7.0 |
 | `postgres` | Datenbank für fortgeschrittene Übungen | 5432 | `full` | PostgreSQL 15 |
 
@@ -103,9 +110,27 @@ docker compose down --volumes  # inkl. Datenlöschung
 ```
 
 ### Sicherheitshinweise
-- Jupyter läuft ohne Token/Passwort für Entwicklung – **nicht für Produktion verwenden**.
+- Jupyter läuft ohne Token/Passwort für Entwicklung – nicht für
+  öffentlich erreichbare Systeme verwenden.
 - Streamlit-Apps sind remote zugänglich – prüfe Firewall-Einstellungen.
 - PostgreSQL verwendet Standard-Credentials – ändere für sensible Deployments.
+- Vulnerability-Hinweise auf den Docker-Basisimages stammen derzeit aus
+  den Upstream-Images `jupyter/scipy-notebook` und `python:3.12-slim`.
+  Für den Kursbetrieb blockieren sie die Installierbarkeit nicht; sie
+  sollten über regelmäßige Digest- oder Tag-Updates beobachtet werden.
+
+### Empfohlener Kursstandard
+
+Für den regulären Lehrbetrieb ist folgende Kombination derzeit am
+robustesten:
+
+- lokal mit Python 3.12 arbeiten
+- pro Woche nur die jeweilige Requirements-Datei installieren
+- Docker-Slim-Profile nur für kurze Demonstrationen oder bei
+  Onboarding-Problemen einsetzen
+- das Full-Jupyter-Image vor allem für Dozierende, Vorabtests oder
+  vorbereitete Demo-Rechner verwenden
+- Woche 7 standardmäßig im Demo-Modus ohne Transformers betreiben
 
 ---
 ## MLflow Nutzung
@@ -164,7 +189,8 @@ docker compose up -d mlflow
 ```
 
 ### Erweiterte Features
-- **Model Registry**: Für Staging/Production-Übergänge (nicht in Basis-Setup aktiviert).
+- **Model Registry**: für spätere Staging- oder Übergabe-Szenarien;
+  im Basis-Setup nicht aktiviert.
 - **UI-Zugriff**: [http://localhost:5001](http://localhost:5001) für Experiment-Vergleiche.
 
 ---
@@ -229,7 +255,31 @@ database = "iu_analytics"
 tracking_uri = "http://localhost:5001"
 ```
 
-**Hinweis**: Ersetze Platzhalter mit echten Werten. Für lokale Entwicklung: Kopiere nach `~/.streamlit/secrets.toml`.
+**Hinweis**: Ersetze Platzhalter mit echten Werten. Für lokale
+Entwicklung kann die Datei nach `~/.streamlit/secrets.toml` kopiert
+werden.
+
+### W07: Demo-Modus und optionaler Transformers-Modus
+
+Das Backend in Woche 7 ist standardmäßig auf einen stabilen Demo-Betrieb
+ausgelegt.
+
+- `/predict` arbeitet mit einem lokal trainierten Iris-Modell.
+- `/sentiment`, `/qa` und `/generate` nutzen standardmäßig einen
+  heuristischen Demo-Modus.
+- Damit bleibt das Backend ohne große Modell-Downloads startbar.
+
+Wenn reale Hugging-Face-Pipelines gezeigt werden sollen, ist ein
+erweiterter Modus möglich:
+
+```bash
+cd 07_Deployment_Portfolio
+pip install -r ../requirements-week07-transformers.txt
+export AMALEA_ENABLE_TRANSFORMERS=1
+uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Für den regulären Kursbetrieb ist der Demo-Modus meist robuster.
 
 ---
 ## Tests & Qualitätssicherung
@@ -269,7 +319,7 @@ python -m pytest tests/ -v
 
 # Coverage (optional)
 pip install pytest-cov
-python -m pytest tests/ --cov=src --cov-report=html
+python -m pytest tests/ --cov=07_Deployment_Portfolio --cov-report=html
 ```
 
 ---
@@ -302,7 +352,11 @@ docker compose exec streamlit-dev bash
 - **MLflow Version**: Stelle sicher, dass MLflow ≥3.7.0 installiert ist.
 - **Dependencies**: Bei Build-Fehlern: `docker compose build --no-cache`.
 
+- **W07 importiert langsam**: Prüfe, ob `AMALEA_ENABLE_TRANSFORMERS`
+  gesetzt ist. Für den Standardbetrieb sollte die Variable nicht gesetzt
+  sein.
+
 ---
 
-**Letzte Aktualisierung:** 20. Dezember 2025  
-**Version:** 1.1 – Vollständig professionalisiert mit Profiles, Secrets und erweiterten Details.
+**Letzte Aktualisierung:** 8. April 2026  
+**Version:** 1.2 – Technisch konsolidiert für den aktuellen Kursstand.

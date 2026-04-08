@@ -16,22 +16,22 @@ WORKDIR /app
 # Python-Pakete installieren (wählbar über Build-Arg)
 ARG REQS_FILE=requirements.txt
 ARG EXTRA_REQS_FILE=
+RUN mkdir -p /tmp/07_Deployment_Portfolio
+COPY requirements*.txt /tmp/
+COPY 07_Deployment_Portfolio/requirements.cloud.txt /tmp/07_Deployment_Portfolio/requirements.cloud.txt
 COPY ${REQS_FILE} /tmp/requirements.txt
 COPY ${EXTRA_REQS_FILE:-requirements.txt} /tmp/extra-requirements.txt
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
     && pip install --no-cache-dir -r /tmp/requirements.txt \
-    && if [ -n "$EXTRA_REQS_FILE" ]; then pip install --no-cache-dir -r /tmp/extra-requirements.txt; fi
-
-# Streamlit-Konfiguration
-RUN mkdir -p ~/.streamlit && \
+    && if [ -n "$EXTRA_REQS_FILE" ]; then pip install --no-cache-dir -r /tmp/extra-requirements.txt; fi \
+    && mkdir -p ~/.streamlit \
+    && \
     echo '[server]' > ~/.streamlit/config.toml && \
     echo 'port = 8501' >> ~/.streamlit/config.toml && \
     echo 'address = "0.0.0.0"' >> ~/.streamlit/config.toml && \
     echo 'headless = true' >> ~/.streamlit/config.toml && \
-    echo 'runOnSave = true' >> ~/.streamlit/config.toml
-
-# Beispiel-App erstellen
-RUN echo 'import streamlit as st\n\
+    echo 'runOnSave = true' >> ~/.streamlit/config.toml && \
+    echo 'import streamlit as st\n\
 st.title("🎉 IU Data Analytics 2025")\n\
 st.write("Willkommen zur ersten Streamlit-App!")\n\
 st.balloons()' > example_app.py

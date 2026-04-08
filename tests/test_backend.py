@@ -19,6 +19,7 @@ def test_health_ok():
     assert body.get("status") == "ok"
     assert body.get("model_loaded") is True
     assert body.get("target_classes")
+    assert body.get("nlp_mode") in {"heuristic", "transformers"}
 
 
 def test_predict_iris():
@@ -35,13 +36,13 @@ def test_predict_iris():
     assert 0.0 <= body["confidence"] <= 1.0
 
 
-def test_sentiment_stub():
+def test_sentiment_demo_response():
     resp = client.post("/sentiment", json={"text": "good day"})
     assert resp.status_code == 200
     assert resp.json()["label"] == "POSITIVE"
 
 
-def test_qa_stub():
+def test_qa_demo_response():
     resp = client.post("/qa", json={"context": "Sky is blue.", "question": "What color?"})
     assert resp.status_code == 200
     assert "answer" in resp.json()

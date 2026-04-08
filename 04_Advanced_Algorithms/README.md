@@ -1,49 +1,43 @@
+# Woche 4: Fortgeschrittene Algorithmen
 
-# 🌳 04 Advanced Algorithms
+Woche 4 vertieft klassische Verfahren und ergänzt sie um einen ersten
+MLOps-Blick. Im Zentrum stehen Entscheidungsbäume, KNN, K-Means und der
+saubere Vergleich von Experimenten.
 
-> 🚀 **Motivation:**
->
-> In diesem Modul lernst du die drei wichtigsten Algorithmen des Machine Learning – verständlich, praxisnah und direkt anwendbar für dein Portfolio! Du bekommst Einblicke in MLOps, professionelle Experiment-Workflows und baust eigene ML-Apps.
+## Lernziele
 
-> 💡 **Warum lohnt sich das?**
-> - Wer Decision Trees, KNN und K-Means versteht, kann 80% aller ML-Projekte meistern.
-> - Du sammelst praktische Erfahrung mit Tools, die in der Data-Science-Praxis Standard sind.
-> - Du kannst eigene ML-Apps bauen und erklären – ein echter Pluspunkt für Bewerbungen.
+- Entscheidungsbäume, KNN und K-Means fachlich einordnen
+- überwachte und unüberwachte Verfahren vergleichen
+- Hyperparameter bewusst variieren und Ergebnisse nachvollziehbar dokumentieren
+- MLflow als Werkzeug für einfaches Experiment-Tracking kennenlernen
 
-> 📚 **Glossar-Tipp:** Unklare Begriffe? Schau ins [Glossar](../../Glossar_Alle_Begriffe_erklärt.ipynb) – dort findest du alle wichtigen Erklärungen!
+## Materialien
 
-## 📚 Inhalt
+- `02_MLFlow_Big3_Tracking.ipynb`: MLflow-Einstieg mit den drei zentralen Verfahren
+- `03_Bäume_Nachbarn_und_Clustering.ipynb`: vertiefende Theorie und praktische Beispiele
+- `big3_streamlit_dashboard.py`: begleitende Visualisierung bzw. Demonstration
 
-- `02_MLFlow_Big3_Tracking.ipynb` – MLOps mit den Big 3 Algorithmen (Decision Trees, KNN, K-Means)
-- `03_Bäume_Nachbarn_und_Clustering.ipynb` – Deep Dive: Theorie, Praxis & Streamlit-Apps
-- **Portfolio-Tipp:** Nutze die Notebooks als Vorlage für eigene Projekte!
-
-## 🎯 Lernziele
-
-Nach dieser Woche kannst du:
-- ✅ Tree-based Algorithms (Decision Trees)
-- ✅ Distance-based Methods (KNN)
-- ✅ Unsupervised Learning (K-Means Clustering)
-- ✅ Algorithm Selection & Vergleich
-- ✅ Eigene ML-Apps mit Streamlit bauen
-
-## 🚀 So startest du
+## Start
 
 ```bash
-# Umgebung aufsetzen
-pip install -r 04_Advanced_Algorithms/requirements.txt
-
-# Notebooks ausführen
+cd /Users/kqc/amalea
+pip install -r requirements-week04.txt
+cd 04_Advanced_Algorithms
 jupyter notebook 02_MLFlow_Big3_Tracking.ipynb
+```
+
+Für das zweite Notebook:
+
+```bash
+cd 04_Advanced_Algorithms
 jupyter notebook 03_Bäume_Nachbarn_und_Clustering.ipynb
 ```
 
-### 💡 Tipps für saubere Runs
-- **Seeds & Versionen:** Seeds sind in den Notebooks gesetzt, Versionen werden geloggt – behalte das für Repro im Blick.
-- **MLflow:** Default ist lokales Tracking (`file:./mlruns`). Falls der MLflow-Server läuft (`docker compose up -d mlflow`), setze `MLFLOW_TRACKING_URI=http://localhost:5001`.
-- **Kleine Grids:** Die Hyperparameter-Raster sind schlank gehalten, damit die Demos schnell durchlaufen.
-- **Apps/Deploy:** Nutze die Notebooks als Vorlage für Streamlit-Apps; Modelle mit Signaturen/Input-Beispielen loggen erleichtert späteres Serving.
+## Hinweise
 
----
-
-**Viel Erfolg beim Vertiefen und Ausprobieren!**
+- MLflow kann lokal mit `file:./mlruns` genutzt werden. Wenn der Server
+  läuft, ist auch `http://localhost:5001` möglich.
+- Die Notebooks sind für kurze Demonstrationen ausgelegt; größere
+  Hyperparameter-Raster sollten im Kurs bewusst klein gehalten werden.
+- Das Modul eignet sich gut, um Modellwahl und Grenzen einzelner
+  Verfahren vergleichend zu besprechen.

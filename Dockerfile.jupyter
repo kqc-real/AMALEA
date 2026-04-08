@@ -1,5 +1,7 @@
 # Dockerfile.jupyter - Optimiert für IU Data Analytics Kurs
-FROM jupyter/scipy-notebook:python-3.12
+# Upstream no longer provides a stable `python-3.12` tag on Docker Hub.
+# Pin the currently published scipy-notebook digest instead.
+FROM jupyter/scipy-notebook@sha256:fca4bcc9cbd49d9a15e0e4df6c666adf17776c950da9fa94a4f0a045d5c4ad33
 
 # Als root-Benutzer für Installationen
 USER root
@@ -18,23 +20,26 @@ RUN apt-get update && apt-get install -y \
 # Zurück zum jupyter-Benutzer
 USER jovyan
 
-# Aktualisiere conda und pip
-RUN conda update -n base -c defaults conda && \
-    pip install --upgrade pip setuptools wheel
+# Aktualisiere pip und entferne inkompatible Python-Pakete aus dem Basisimage.
+RUN pip install --upgrade pip setuptools wheel && \
+    pip uninstall -y numba pyOpenSSL
 
 # Installiere Python-Pakete (wählbar über Build-Arg)
 ARG REQS_FILE=requirements.txt
 ARG EXTRA_REQS_FILE=
+RUN mkdir -p /tmp/07_Deployment_Portfolio
+COPY requirements*.txt /tmp/
+COPY 07_Deployment_Portfolio/requirements.cloud.txt /tmp/07_Deployment_Portfolio/requirements.cloud.txt
 COPY ${REQS_FILE} /tmp/requirements.txt
 COPY ${EXTRA_REQS_FILE:-requirements.txt} /tmp/extra-requirements.txt
-# Pre-install build-time dependencies to avoid setuptools/backports issues
+# Remove conflicting base packages and pre-install build helpers before the
+# course requirements upgrade core scientific packages.
 RUN pip install --no-cache-dir --upgrade setuptools wheel backports.tarfile && \
     pip install --no-cache-dir -r /tmp/requirements.txt && \
-    if [ -n "$EXTRA_REQS_FILE" ]; then pip install --no-cache-dir -r /tmp/extra-requirements.txt; fi
-
-# Jupyter Erweiterungen installieren
-RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
-    jupyter lab build
+    if [ -n "$EXTRA_REQS_FILE" ]; then pip install --no-cache-dir -r /tmp/extra-requirements.txt; fi && \
+    pip install --no-cache-dir 'pyOpenSSL>=26.0.0,<27.0.0' && \
+    pip install --no-cache-dir jupyterlab_widgets && \
+    pip check
 
 # Arbeitsverzeichnis setzen
 WORKDIR /workspace

@@ -11,35 +11,39 @@
 
 ### Überblick
 
-AMALEA 2025 ist ein vollständig modernisierter, praxisorientierter Notebook-basierter Kurs für "Data Analytics" & "Machine Learning", der speziell für Informatik-Studierende der IU ab dem 5. Semester konzipiert wurde. Der Kurs baut auf dem bewährten **"Angewandte Machine Learning Algorithmen"** Programm des KI-Campus auf und erweitert es um moderne Deployment-Strategien, interaktive Web-Anwendungen und industrierelevante MLOps-Kompetenzen. Der Kurs kombiniert theoretische Grundlagen mit intensiver praktischer Anwendung und bereitet Studierende auf die Anforderungen der modernen Datenwissenschaft vor. Durch die Entwicklung von **17 interaktiven Jupyter Notebooks** und **12 produktionsreifen Streamlit-Anwendungen** (alle Wochen 01–07 production-ready; W06/W07 CPU-freundlich) erwerben die Teilnehmer nicht nur technische Kompetenzen, sondern erstellen gleichzeitig ein beeindruckendes Portfolio für ihre berufliche Laufbahn.
+AMALEA 2025 ist ein praxisorientierter, notebook-basierter Kurs zu Data Analytics und Machine Learning für Informatik-Studierende ab dem 5. Semester. Der Kurs baut auf dem Programm **"Angewandte Machine Learning Algorithmen"** des KI-Campus auf und ergänzt es um interaktive Web-Anwendungen, grundlegende Deployment-Szenarien und ausgewählte MLOps-Themen. Er verbindet theoretische Grundlagen mit praktischer Arbeit an Notebooks, kleinen Anwendungen und nachvollziehbaren Projektartefakten. Das Repository umfasst im aktuellen Stand **17 Jupyter-Notebooks** und **12 Streamlit-Anwendungen** unterschiedlicher Reifegrade.
 
 ### Pädagogisches Konzept
 
-Der Kurs folgt einem projektbasierten Lernansatz, bei dem jede Woche aufeinander aufbauende Kompetenzen vermittelt werden. Beginnend mit Python-Grundlagen und Datenmanipulation führt der Lernpfad systematisch zu fortgeschrittenen Machine Learning-Verfahren, Neural Networks und schließlich zu produktionsreifen Deployment-Strategien. Jede Woche baut auf den vorherigen auf und liefert sofort einsatzbereite Portfolio-Komponenten.
+Der Kurs folgt einem projektbasierten Lernansatz. Woche für Woche werden aufeinander aufbauende Kompetenzen vermittelt: von Python-Grundlagen und Datenmanipulation über klassisches Machine Learning bis hin zu neuronalen Netzen, Computer Vision, NLP und einfachen Deployment-Szenarien. Jede Woche enthält ein klar umrissenes Lernpaket aus Notebook, Anwendung oder Demo.
 
-Ein zentrales Merkmal des Kurses ist die Betonung auf echte, industrierelevante Projekte. Anstatt theoretische Übungen zu absolvieren, entwickeln die Studierenden von Beginn an funktionsfähige Web-Anwendungen, die echte Daten verarbeiten und für reale Nutzer zugänglich sind. Dieser Ansatz bereitet optimal auf die Anforderungen moderner Arbeitsplätze vor, wo Data Scientists nicht nur Algorithmen verstehen, sondern auch komplette End-to-End-Lösungen entwickeln müssen.
+Ein zentrales Merkmal des Kurses ist der Wechsel zwischen fachlichem Verständnis und sichtbaren Ergebnissen. Anstelle rein theoretischer Übungen erstellen die Studierenden kleine Anwendungen, testen Modelle an Beispieldaten und dokumentieren ihre Arbeitsschritte. So werden Analyse, Modellierung, Visualisierung und Kommunikation zusammen gedacht.
 
 ### Lernziele und Kompetenzen
 
-Nach erfolgreichem Abschluss des Kurses verfügen die Studierenden über ein umfassendes Skillset, das sie unmittelbar in der Berufspraxis einsetzen können. Sie beherrschen Python für Data Science auf professionellem Niveau und können selbstständig Machine Learning-Pipelines von der Datenaufbereitung bis zum Deployment entwickeln. Besonders wertvoll ist ihre Fähigkeit, interaktive Web-Anwendungen mit Streamlit zu erstellen, die komplexe Datenanalysen für Nicht-Techniker zugänglich machen.
+Nach erfolgreichem Abschluss des Kurses verfügen die Studierenden über ein belastbares Grundgerüst für datenorientierte Softwareprojekte. Sie können Daten mit Python aufbereiten, einfache bis mittlere Machine-Learning-Pipelines entwickeln, Ergebnisse bewerten und interaktive Oberflächen mit Streamlit erstellen.
 
-Die Teilnehmer lernen moderne Deep Learning-Frameworks wie TensorFlow und Keras kennen und können Neural Networks für Computer Vision und Natural Language Processing implementieren. Durch die intensive Arbeit mit aktuellen Bibliotheken wie Hugging Face Transformers sind sie mit den neuesten Entwicklungen im Bereich der künstlichen Intelligenz vertraut. Gleichzeitig erwerben sie praktische MLOps-Kompetenzen, die für die Skalierung von Machine Learning-Lösungen in Produktionsumgebungen essentiell sind. Im Deployment-Modul (W07) arbeiten sie mit einer FastAPI-Demo; die NLP-Endpunkte (Sentiment/QA/Generate) nutzen leichte Hugging Face Pipelines (DistilBERT/Tiny-GPT-2), sodass API-Design, Monitoring und Deployment realistisch erprobt werden können.
+Die Teilnehmer lernen TensorFlow und Keras als Werkzeuge für neuronale Netze kennen und erhalten Einblicke in Computer Vision und Natural Language Processing. Ergänzend erwerben sie Grundlagen zu MLOps, Experiment-Tracking und API-Design. Im Deployment-Modul arbeiten sie mit einer FastAPI-Demo und zwei Dashboards; für NLP steht standardmäßig ein leichtgewichtiger Demo-Betrieb zur Verfügung, optional auch ein erweiterter Modus mit Hugging-Face-Pipelines.
 
 ### Kursstruktur und Inhalte
 
 Der siebenwöchige Kurs ist in aufeinander aufbauende Module gegliedert, die jeweils spezifische Lernziele verfolgen. Die erste Woche etabliert solide Python-Grundlagen und führt in die Arbeit mit Pandas für Datenmanipulation ein. Ein besonderes Highlight ist das "Python in 3 Stunden" Notebook, das auch für Quereinsteiger einen schnellen, aber gründlichen Einstieg ermöglicht.
 
-Die zweite Woche konzentriert sich auf die Entwicklung interaktiver Web-Anwendungen mit Streamlit und vertieft die Datenanalyse-Kompetenzen. Hier erstellen die Studierenden ihre erste produktionsreife Anwendung und lernen dabei die Grundlagen des Web-Deployments kennen. Die dritte Woche führt systematisch in Machine Learning ein, wobei der Fokus auf praktischer Anwendung und der Integration von ML-Modellen in Web-Interfaces liegt.
+Die zweite Woche konzentriert sich auf die Entwicklung interaktiver Web-Anwendungen mit Streamlit und vertieft die Datenanalyse-Kompetenzen. Hier erstellen die Studierenden ihre erste kleine Anwendung und lernen die Grundlagen zustandsloser Web-Interaktionen kennen. Die dritte Woche führt systematisch in Machine Learning ein, wobei der Fokus auf praktischer Anwendung und der Einbindung von Modellen in einfache Benutzeroberflächen liegt.
 
-Das absolute Highlight des Kurses ist die vierte Woche mit dem "Big 3" Notebook, das eine umfassende praktische Einführung in die drei wichtigsten Machine Learning-Algorithmen bietet: Decision Trees, K-Nearest Neighbors und K-Means Clustering. Dieses Modul verbindet theoretisches Verständnis mit intensiver praktischer Anwendung und bereitet optimal auf komplexere Algorithmen vor.
+Ein zentraler Baustein des Kurses ist die vierte Woche mit dem "Big 3"
+Notebook, das eine praktische Einführung in Decision Trees,
+K-Nearest Neighbors und K-Means Clustering bietet. Dieses Modul
+verbindet theoretisches Verständnis mit intensiver praktischer
+Anwendung.
 
-Die fünfte Woche taucht tief in Neural Networks und Deep Learning ein, während die sechste Woche Computer Vision und Natural Language Processing mit vier spezialisierten Notebooks (Runner: `run_cv_notebooks.sh`, Executed-Notebooks inklusive) und vier begleitenden Streamlit-Anwendungen/Dashboards behandelt. Die finale siebte Woche konzentriert sich auf Deployment, MLOps und Portfolio-Entwicklung mit FastAPI-Demo (NLP-Endpunkte via leichte HF-Pipelines für Sentiment/QA/Generate), zwei produktionsreifen Streamlit-Dashboards und drei kompakten Notebooks; die Studierenden üben API-Handling, Monitoring und Deployment.
+Die fünfte Woche vertieft neuronale Netze und Deep Learning. Die sechste Woche behandelt Computer Vision und Natural Language Processing mit mehreren spezialisierten Notebooks und ergänzendem Bildmaterial. Die siebte Woche konzentriert sich auf Deployment, MLOps und Portfolio-Artefakte mit einer FastAPI-Demo, zwei Dashboards und drei kompakten Notebooks. Dabei stehen API-Handling, Monitoring-Ideen und die Einordnung eines prototypischen Deployment-Ablaufs im Vordergrund.
 
-**Repository-Organisation:** Alle Kursmaterialien sind systematisch strukturiert mit wochenspezifischen Ordnern (01_Python_Grundlagen/ bis 07_Deployment_Portfolio/). Executed Notebooks in `executed_notebooks/` bieten sofort einsatzbereite Referenzimplementierungen, während `datasets/` alle notwendigen Datensätze für praktische Übungen enthält. Vorlesungseinheiten in `Vorlesungseinheiten/` vertiefen theoretische Konzepte, und `tests/` gewährleistet Code-Qualität durch umfassende Test-Suiten.
+**Repository-Organisation:** Alle Kursmaterialien sind in wochenspezifischen Ordnern (01_Python_Grundlagen/ bis 07_Deployment_Portfolio/) strukturiert. Referenzfassungen liegen je nach Modul als `.nbconvert.ipynb`, in `executed/`-Ordnern oder als lokal erzeugbare Ausgabe vor. `datasets/` enthält die Datensätze für praktische Übungen, `Vorlesungseinheiten/` vertieft theoretische Konzepte, und `tests/` bündelt automatisierte Prüfungen für ausgewählte Teile des Repos.
 
 ### Aktuelle Kursstruktur im Detail (2025)
 
-Der vollständig modernisierte Kurs umfasst **29 Portfolio-Komponenten** und ist in einem professionellen Repository mit modularer Struktur organisiert:
+Der aktuelle Stand des Repositories umfasst **29 größere Lern- und Projektartefakte** in modularer Struktur:
 
 | Woche | Thema | Core Notebooks | Streamlit Apps | Fokus |
 |-------|-------|----------------|----------------|--------|
@@ -54,7 +58,7 @@ Der vollständig modernisierte Kurs umfasst **29 Portfolio-Komponenten** und ist
 **Gesamt: 17 Core Notebooks + 12 Streamlit Apps = 29 Portfolio-Komponenten**
 
 **Zusätzliche Ressourcen:**
-- **Executed Notebooks** (`executed_notebooks/`): Sofort einsatzbereite, ausführbare Versionen aller wichtigen Notebooks
+- **Executed Notebooks** (`executed_notebooks/`): vorgesehener Ausgabeort für ausgeführte Notebooks; weitere Referenzfassungen liegen modulweise vor
 - **Datasets** (`datasets/`): Alle Kurs-Datensätze für praktische Übungen
 - **Vorlesungseinheiten** (`Vorlesungseinheiten/`): Vertiefende Vorlesungseinheiten zu theoretischen Konzepten
 - **Tests** (`tests/`): Umfassende Test-Suite für Qualitätssicherung
@@ -67,16 +71,16 @@ Alle Projekte folgen dem systematischen **QUA³CK Prozessmodell**:
 - **U**nderstand: Comprehensive Data Exploration & Statistical Analysis  
 - **A**cquire & Clean: Professional Data Pipeline & ETL Development
 - **A**nalyze: Machine Learning Model Development mit MLFlow Tracking
-- **A**pp: Production-Ready Streamlit Cloud Deployment
+- **A**pp: Bereitstellung einer Streamlit-Anwendung oder eines Dashboards
 - **C**onclusion & **K**ommunikation: Portfolio Documentation & Presentation
 
 ### Innovative Technologien und Tools
 
-Der Kurs setzt konsequent auf moderne, industrierelevante Technologien. Python 3.11+ bildet das Fundament, ergänzt durch leistungsfähige Bibliotheken wie Pandas, NumPy und Scikit-learn für klassisches Machine Learning. Für Deep Learning kommen TensorFlow und Keras zum Einsatz, während Hugging Face Transformers den Zugang zu modernsten NLP-Modellen ermöglicht. Dependencies sind pro Woche getrennt (Week-Requirements + Lockfiles), damit Installationen schlank und reproduzierbar bleiben: leichter Stack (W01–W03), MLOps (W04), Deep Learning (W05), CV/NLP (W06), Deployment (W07).
+Der Kurs setzt auf verbreitete Werkzeuge aus Data Science und Machine Learning. Python 3.11+ bildet das Fundament, ergänzt durch Pandas, NumPy und Scikit-learn für klassisches Machine Learning. Für Deep Learning kommen TensorFlow und Keras zum Einsatz. Hugging Face Transformers wird als optionaler Einstieg in moderne NLP-Bibliotheken genutzt. Dependencies sind pro Woche getrennt, damit Installationen schlank und nachvollziehbar bleiben.
 
-Ein besonderer Fokus liegt auf Streamlit als Framework für die Entwicklung interaktiver Web-Anwendungen. Diese Technologie ermöglicht es Data Scientists, ihre Analysen ohne umfangreiche Web-Entwicklungskenntnisse in benutzerfreundliche Interfaces zu verwandeln. Docker containerisiert die gesamte Entwicklungsumgebung und gewährleistet Konsistenz und Reproduzierbarkeit across verschiedene Systeme. Mehrere Dockerfile-Varianten (jupyter, streamlit, slim/full) bieten Flexibilität für verschiedene Use-Cases.
+Ein besonderer Fokus liegt auf Streamlit als Framework für interaktive Web-Anwendungen. Docker unterstützt die lokale Reproduzierbarkeit der Umgebung. Mehrere Dockerfile-Varianten und Compose-Setups erleichtern die Arbeit mit unterschiedlichen Ressourcenprofilen.
 
-Für das Experiment Tracking und MLOps kommt MLflow zum Einsatz, während Git und GitHub für Versionskontrolle und Collaboration sorgen. Die Visualisierung erfolgt mit modernen Bibliotheken wie Plotly und Matplotlib, die interaktive und publikationsreife Grafiken ermöglichen. Qualitätssicherung erfolgt durch pytest für Unit-Tests, ruff und black für Code-Qualität und -Formatierung, und ein umfassendes Makefile für automatisierte Workflows.
+Für Experiment-Tracking und MLOps wird MLflow eingeführt. Git und GitHub dienen der Versionskontrolle. Visualisierungen entstehen mit Plotly und Matplotlib. Qualitätssicherung erfolgt mit pytest, ruff, black und einem Makefile für wiederkehrende Abläufe.
 
 ### ML/DL-Algorithmen und Demos pro Woche (Auswahl)
 
@@ -89,7 +93,7 @@ Für das Experiment Tracking und MLOps kommt MLflow zum Einsatz, während Git un
 
 ### Studienleistung: Portfolio laut Prüfungsordnung
 
-Die Studienleistung erfordert die Entwicklung einer vollständigen MLOps-Anwendung, die eine End-to-End Machine Learning Pipeline, eine interaktive Streamlit-Web-App und ein Live-Deployment in der Streamlit Cloud umfasst. Dieser Ansatz geht weit über traditionelle Klausuren hinaus und bewertet die Fähigkeit, komplette, produktionsreife Lösungen zu entwickeln.
+Die Studienleistung ist auf die Entwicklung einer zusammenhängenden MLOps-Anwendung ausgerichtet. Dazu gehören eine End-to-End-Machine-Learning-Pipeline, eine interaktive Streamlit-Web-App und ein nachvollziehbarer Deployment-Teil. Der Schwerpunkt liegt auf dem Verständnis und der Dokumentation des Gesamtprozesses, nicht auf dem Nachweis eines vollständig ausgehärteten Produktivsystems.
 
 Die Studierenden haben maximale Freiheit bei der Themenwahl und werden ermutigt, Projekte zu entwickeln, die ihre persönlichen Interessen widerspiegeln und als Vorstudie für ihr Bachelorprojekt dienen können. Zur Inspiration werden Beispiele aus verschiedenen Bereichen angeboten: Predictive Analytics für Immobilienpreise, Computer Vision für medizinische Bildanalyse, NLP für Social Media Sentiment Analysis oder Business Intelligence Dashboards für Sales Forecasting.
 
@@ -101,19 +105,19 @@ Für Business-Anwendungen stehen APIs wie Yahoo Finance für Finanzdaten, World 
 
 ### Portfolio-Entwicklung und Karrierevorbereitung
 
-Ein zentrales Ziel des Kurses ist die Entwicklung eines beeindruckenden Portfolios, das die Studierenden direkt in Bewerbungsgesprächen einsetzen können. Die **29 Portfolio-Komponenten** (17 Notebooks + 12 Streamlit Apps) demonstrieren nicht nur technische Kompetenz, sondern zeigen auch die Fähigkeit, komplexe Probleme vollständig zu lösen und benutzerfreundliche Interfaces zu entwickeln.
+Ein zentrales Ziel des Kurses ist der Aufbau nachvollziehbarer Arbeitsproben. Die **29 Portfolio-Komponenten** aus Notebooks und Streamlit-Anwendungen dokumentieren technische Grundlagen, Modellierungsentscheidungen und den Umgang mit Werkzeugen entlang eines kompletten Arbeitsablaufs.
 
-Alle entwickelten Anwendungen sind produktionsreif und öffentlich zugänglich, was sie von typischen Studienarbeiten unterscheidet. Arbeitgeber können die Live-Apps direkt testen und sich von den praktischen Fähigkeiten der Bewerber überzeugen. Zusätzlich bieten die Executed Notebooks in `executed_notebooks/` sofort einsatzbereite Referenzimplementierungen, während die Vorlesungseinheiten in `Vorlesungseinheiten/` theoretische Konzepte vertiefen.
+Nicht alle Artefakte sind auf denselben Betriebsgrad ausgelegt. Einige Bausteine sind als Kurskern stabil einsetzbar, andere dienen bewusst als Lehrdemo oder als Ausgangspunkt für eigene Ausarbeitungen. Ergänzend bieten Referenzfassungen der Notebooks und die Vorlesungseinheiten Orientierung für Selbststudium und Wiederholung.
 
-Diese Herangehensweise bereitet optimal auf moderne Data Science Rollen vor, wo die Fähigkeit zur Kommunikation und Präsentation von Ergebnissen genauso wichtig ist wie die technische Umsetzung. Die modulare Repository-Struktur mit professionellen Entwicklungstools (pytest, ruff, Makefile) vermittelt zudem Industriestandards für Code-Qualität und Projektmanagement.
+Diese Herangehensweise bereitet auf typische Aufgaben in Data-Science- und ML-Projekten vor. Neben der technischen Umsetzung werden auch Kommunikation, Strukturierung und Dokumentation von Ergebnissen eingeübt.
 
 ### Technische Infrastruktur und Support
 
-Die gesamte Kursinfrastruktur ist vollständig dockerisiert und ermöglicht eine einheitliche Entwicklungsumgebung für alle Teilnehmer. Mit einem einzigen `docker-compose up` Kommando wird eine vollständige Data Science Workbench gestartet, die Jupyter Notebooks (Port 8888), Streamlit-Entwicklung (Port 8501) und MLflow für Experiment Tracking (Port 5001) umfasst. Zusätzlich stehen Slim-Varianten für ressourcenschonende Entwicklung zur Verfügung.
+Für den Kurs stehen Docker- und lokale Entwicklungswege bereit. Mit `docker-compose up` lässt sich eine gemeinsame Umgebung mit Jupyter, Streamlit und MLflow starten. Ergänzend gibt es schlankere Varianten für ressourcenschonende Setups.
 
-Das Repository ist modular strukturiert mit wochenspezifischen Requirements-Dateien für effiziente Installationen. Ein umfassendes Makefile automatisiert Build-, Test- und Formatierungsprozesse, während pytest und ruff für Qualitätssicherung sorgen. Executed Notebooks in `executed_notebooks/` bieten sofortige Referenzimplementierungen, und `datasets/` enthält alle Kurs-Datensätze für praktische Übungen.
+Das Repository ist modular strukturiert und nutzt wochenspezifische Requirements-Dateien. Ein Makefile unterstützt wiederkehrende Aufgaben wie Installieren, Testen, Linting und Formatierung. `datasets/` enthält die Kursdaten; Referenzfassungen von Notebooks liegen je nach Modul an unterschiedlichen Stellen im Repository.
 
-Für Studierende, die lokale Installationen bevorzugen, ist eine detaillierte Anleitung mit allen erforderlichen Dependencies verfügbar. Ein umfassendes Troubleshooting-Kapitel behandelt häufige Probleme und deren Lösungen, während zusätzliche Ressourcen und Links zu offizieller Dokumentation bei der Vertiefung spezifischer Themen helfen. Die `Vorlesungseinheiten/` enthalten vertiefende Vorlesungseinheiten zu theoretischen Konzepten, und `tests/` bietet eine vollständige Test-Suite für Qualitätssicherung.
+Für lokale Installationen stehen detaillierte Hinweise zu Abhängigkeiten und Startbefehlen bereit. Zusätzlich helfen Vorlesungseinheiten, Glossar, Datasets und ausgewählte Tests bei der Vertiefung und Absicherung einzelner Themen.
 
 ### Integration originaler AMALEA-Inhalte
 
@@ -121,10 +125,14 @@ Der Kurs baut auf dem bewährten **"Angewandte Machine Learning Algorithmen"**-P
 
 ### Zukunftsorientierung und Industrie-Relevanz
 
-AMALEA 2025 ist konsequent auf die Anforderungen der modernen Datenökonomie ausgerichtet. Die vermittelten Technologien und Methoden entsprechen dem aktuellen Industriestandard und bereiten die Studierenden auf gefragte Rollen wie Data Scientist, ML Engineer, oder Data Product Manager vor. Durch die Betonung auf End-to-End-Lösungen und Deployment-Kompetenzen sind die Absolventen in der Lage, sofort produktiv zu arbeiten und echten Business Value zu schaffen.
+AMALEA 2025 orientiert sich an verbreiteten Arbeitsweisen in Data-Science- und Machine-Learning-Projekten. Die vermittelten Technologien und Methoden bereiten auf Rollen wie Data Scientist, ML Engineer oder Data Product Manager vor. Besonders wertvoll ist dabei die Verbindung von Analyse, Modellierung, Visualisierung und einfacher Bereitstellung.
 
-Der Kurs bereitet auch optimal auf weiterführende Studien vor, insbesondere für Masterstudiengänge im Bereich Data Science, Artificial Intelligence oder Machine Learning. Die erworbenen Kompetenzen in MLOps und Cloud-Deployment sind essentiell für fortgeschrittene Forschungsprojekte und industrielle Kooperationen.
+Der Kurs bereitet auch auf weiterführende Studien vor, insbesondere für
+Masterstudiengänge im Bereich Data Science, Artificial Intelligence oder
+Machine Learning. Die erworbenen Kompetenzen in MLOps und
+Cloud-Deployment sind dabei eine sinnvolle Grundlage für fortgeschrittene
+Forschungsprojekte und industrielle Kooperationen.
 
 ---
 
-*AMALEA 2025 verbindet bewährte pädagogische Konzepte mit modernster Technologie und bereitet eine neue Generation von Data Scientists vor, die nicht nur Algorithmen verstehen, sondern komplette, produktionsreife Lösungen entwickeln können, die echten Impact in der digitalen Wirtschaft erzielen. Mit **29 Portfolio-Komponenten** (17 Notebooks + 12 Apps), modularer Repository-Struktur und professionellen Entwicklungstools ist der Kurs optimal für moderne Data Science Karrieren ausgerichtet.*
+*AMALEA 2025 verbindet bewährte pädagogische Konzepte mit einer modularen technischen Lernumgebung. Mit **29 Portfolio-Komponenten** aus Notebooks und Anwendungen, klarer Wochenstruktur und begleitenden Entwicklungstools eignet sich das Repository gut für einen projektorientierten Kurs in Data Analytics und Big Data.*

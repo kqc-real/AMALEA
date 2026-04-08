@@ -1,125 +1,81 @@
-# 🐍 Woche 1: Python & Data Science Fundamentals
+# Woche 1: Python-Grundlagen und QUA3CK
 
-> 🚀 **Dein Ziel:**
->
-> Vom "Skript-Bastler" zum **Data Science Engineer**.
-> In dieser Woche legst du das Fundament für professionelle Daten-Projekte: Reproduzierbar, strukturiert und bereit für die Cloud.
+Woche 1 legt das Fundament für den Kurs. Im Mittelpunkt stehen Python,
+Pandas, erste Streamlit-Schritte, Docker-Grundlagen und das
+QUA3CK-Prozessmodell.
 
-## 💡 Warum dieser Tech-Stack?
+## Lernziele
 
-Wir setzen auf den **Industrie-Standard**:
-1.  **Python & Pandas:** Das "Excel auf Steroiden" für Datenanalyse.
-2.  **Streamlit:** Der schnellste Weg von Daten zur Web-App (ohne HTML/CSS!).
-3.  **Docker:** Damit deine App überall läuft (nie wieder "It works on my machine").
-4.  **QUA³CK:** Ein Prozessmodell, das Chaos in Struktur verwandelt.
+- Python-Syntax und zentrale Datentypen sicher anwenden
+- Daten mit Pandas einlesen, filtern und transformieren
+- den Unterschied zwischen Notebook und Streamlit-App verstehen
+- eine einfache Arbeitsumgebung lokal oder mit Docker starten
+- das QUA3CK-Modell als Struktur für datenorientierte Projekte einordnen
 
----
+## Materialien
 
-## 🗺️ Deine Roadmap
+- `00_Python_in_3_Stunden.ipynb`: kompakter Einstieg in Python und Pandas
+- `01_Docker_für_Data_Science.ipynb`: Grundidee containerisierter Arbeitsumgebungen
+- `03_QUA3CK_Prozessmodell.ipynb`: methodischer Rahmen für spätere Wochen
+- `uebungs_app.py`: erste kleine Streamlit-Anwendung
+- `meine_erste_app.py`: zusätzliche einfache App zum Einstieg
 
-Arbeite die Inhalte in dieser Reihenfolge durch:
+## Empfohlene Reihenfolge
 
-### 1️⃣ Die Basics (Theorie & Praxis)
-- **`00_Python_in_3_Stunden.ipynb`**
-  - *Lernziel:* Python-Syntax auffrischen und Daten mit Pandas bändigen.
-  - *Highlight:* Visualisierung mit Plotly vs. Matplotlib.
+1. `00_Python_in_3_Stunden.ipynb`
+2. `01_Docker_für_Data_Science.ipynb`
+3. `03_QUA3CK_Prozessmodell.ipynb`
+4. `uebungs_app.py`
 
-### 2️⃣ Die Infrastruktur (DevOps)
-- **`01_Docker_für_Data_Science.ipynb`**
-  - *Lernziel:* Verstehen, wie man Data-Science-Umgebungen containerisiert.
-  - *Output:* Ein `Dockerfile` und `docker-compose.yml` für dieses Projekt.
+Als Nachschlagewerk eignet sich `../Glossar_Alle_Begriffe_erklärt.ipynb`.
 
-### 3️⃣ Die Methodik (Process)
-- **`03_QUA3CK_Prozessmodell.ipynb`**
-  - *Lernziel:* ML-Projekte professionell planen (Question -> Understand -> ...).
-  - *Highlight:* Integration von MLFlow und Experiment-Tracking.
+## Start
 
-### 4️⃣ Das Produkt (Deployment)
-- **`uebungs_app.py`**
-  - *Was:* Deine erste Streamlit-App (Dashboard).
-  - *Aufgabe:* Starte sie und passe sie an!
-
-> 📚 **Cheat-Sheet:** Nutze `../Glossar_Alle_Begriffe_erklärt.ipynb` als dein ständiges Nachschlagewerk für Fachbegriffe.
-
----
-
-## 🛠️ Setup & Start
-
-Du hast zwei Möglichkeiten, mit diesem Repo zu arbeiten:
-
-### Option A: Die App starten (via Docker) 🐳
-Perfekt, um das Endergebnis zu sehen und die Umgebung zu testen.
+### Lokal
 
 ```bash
-# 1. Container bauen und starten
-docker-compose up --build
-
-# 2. App im Browser öffnen
-# http://localhost:8501
-```
-
-### Option B: Notebooks bearbeiten (Lokal) 💻
-Um die `.ipynb` Dateien interaktiv zu lernen:
-
-```bash
-# 1. Abhängigkeiten installieren
+cd 01_Python_Grundlagen
 pip install -r requirements.txt
-
-# 2. Jupyter Lab starten
 jupyter lab
+```
 
-# 3. Tests ausführen (optional)
+### Streamlit-App starten
+
+```bash
+cd 01_Python_Grundlagen
+streamlit run uebungs_app.py
+```
+
+### Mit Makefile
+
+```bash
+cd 01_Python_Grundlagen
+make help
+make install
+make run
 make test
 ```
 
-### Option C: Makefile-Befehle verwenden 🛠️
-Für häufige Aufgaben stehen Makefile-Befehle zur Verfügung:
+### Mit Docker
 
 ```bash
-make help          # Zeige alle verfügbaren Befehle
-make install       # Abhängigkeiten installieren
-make run           # Übungs-App starten
-make test          # Tests ausführen
-make clean         # Temporäre Dateien aufräumen
-make docker-build  # Docker-Image bauen
+cd 01_Python_Grundlagen
+docker-compose up --build
 ```
 
----
+## Hinweise
 
-## ⚠️ Wichtige Hinweise
+- Streamlit-Code gehört in `.py`-Dateien und wird über das Terminal gestartet.
+- Für den Kurs reicht in der Regel die lokale Ausführung; Docker ist eine
+  zusätzliche Option.
+- Wenn Ports belegt sind, müssen die laufenden Dienste angepasst oder beendet werden.
 
-1.  **Streamlit vs. Notebooks:**
-    Streamlit-Code (`st.write`, etc.) funktioniert **nicht** in Jupyter Notebooks. Schreibe ihn immer in `.py` Dateien (wie `uebungs_app.py`) und führe sie via Terminal aus.
+## Qualitätssicherung
 
-2.  **Docker Troubleshooting:**
-    Falls Ports belegt sind, stoppe andere Container mit `docker stop $(docker ps -q)`.
-
----
-
-## 🧪 Qualitätssicherung
-
-### Code-Standards
-- Alle Python-Dateien folgen **PEP 8** Konventionen
-- Umfassende **Docstrings** für bessere Dokumentation
-- **Type Hints** wo sinnvoll (in zukünftigen Versionen)
-
-### Tests
-Führe die Unit-Tests aus:
 ```bash
+cd 01_Python_Grundlagen
 make test
-# oder
-python -m pytest tests/
 ```
 
-### Linting & Formatierung
-```bash
-# Installation (einmalig)
-pip install flake8 black isort
-
-# Code formatieren
-black *.py tests/
-isort *.py tests/
-
-# Linting
-flake8 *.py tests/
-```
+Bei Bedarf lassen sich Formatierung und Linting zusätzlich mit `black`,
+`isort` und `flake8` lokal ausführen.

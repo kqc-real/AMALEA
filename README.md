@@ -1,116 +1,118 @@
-# 🎓 AMALEA 2025 - Data Analytics & Big Data
+# AMALEA 2025: Data Analytics & Big Data
 
-<div align="center">
-  <img src="./kurs-logo.png" alt="AMALEA 2025 Logo" width="400">
-  <br><br>
-  <img src="https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white" alt="Streamlit">
-  <img src="https://img.shields.io/badge/Docker-Enabled-2496ED?logo=docker&logoColor=white" alt="Docker">
-  <img src="https://img.shields.io/badge/MLflow-Tracking-orange?logo=mlflow&logoColor=white" alt="MLflow">
-  <img src="https://img.shields.io/badge/TensorFlow-2.0+-FF6F00?logo=tensorflow&logoColor=white" alt="TensorFlow">
-  <img src="https://img.shields.io/badge/Hugging%20Face-Transformers-yellow?logo=huggingface&logoColor=white" alt="Hugging Face">
-</div>
+![AMALEA 2025 Logo](./kurs-logo.png)
 
-**Der modernisierte Data-Science-Kurs für Entwickler & Analysten**
+![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?logo=docker&logoColor=white)
+![MLflow](https://img.shields.io/badge/MLflow-Tracking-orange?logo=mlflow&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0+-FF6F00?logo=tensorflow&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Transformers-yellow?logo=huggingface&logoColor=white)
 
-> 🚀 **Dein Ziel:**
->
-> Von Python-Basics zu **Production-Grade ML-Systemen**.
-> In 7 Wochen baust du ein Portfolio aus **12 interaktiven Apps**, trainierst neuronale Netze und deployest alles in die Cloud.
->
-> **Kein "Spaghetti-Code" in Notebooks, sondern sauberes Software-Engineering für Daten.**
+Praxisorientierter Kurs zu Data Analytics, Machine Learning und
+Deployment.
 
-## 🧭 Worum es geht (Kurzüberblick)
+> In sieben Wochen führt das Repository von Python-Grundlagen über
+> Datenanalyse und klassisches Machine Learning bis zu Dashboards, APIs
+> und einfachen Deployment-Szenarien.
 
-AMALEA führt dich in 7 Wochen von Python-Grundlagen bis zum Deployment einer ML-API mit Dashboards. Das Repo ist in Wochen gegliedert:
-- **Notebooks**: Schritt-für-Schritt-Anleitungen mit Erklärungen, Übungen und Executed-Versionen, damit du sofort Ergebnisse siehst.
-- **Streamlit-Apps**: Interaktive Demos pro Woche, um Modelle, Visualisierungen und Workflows auszuprobieren.
-- **Backend & MLOps** (W07): Eine FastAPI-Demo mit MLflow-Integration und zwei Dashboards (Monitoring, NLP), plus Compose-Stack für lokalen Start.
-- **Requirements pro Woche**: Schlanke Installationen, damit du nur das lädst, was du brauchst (W01–W03 leicht, W04 MLOps, W05 DL, W06 CV/NLP, W07 Deployment).
+## Worum Es Geht
 
-So nutzt du den Kurs:
-1) **Woche starten:** Lies das Kernnotebook der Woche (Executed-Version als Referenz), danach selbst ausführen und Übungen lösen.  
-2) **App ausprobieren:** Öffne die passende Streamlit-App für schnelles Experimentieren (Features schieben, Modelle testen).  
-3) **Variieren & dokumentieren:** Ändere Hyperparameter/Features, logge Ergebnisse (W04/W07 mit MLflow) und notiere Learnings in kurzen Markdown-Notizen.  
-4) **Deployment üben (W07):** Starte die FastAPI + Dashboards lokal oder via Compose, spiele den Demo/Live-Schalter durch und inspiziere Requests/Responses.  
-5) **Portfolio bauen:** Sammle Screenshots, kurze Beschreibungen und Metrikvergleiche; jedes Wochenziel ergibt einen Baustein für dein Portfolio.
+AMALEA ist als wöchentlich gegliederte Lehrsammlung aufgebaut. Der
+stabile Kurskern liegt in Woche 1 bis 4. Woche 5 und 6 erweitern den
+Kurs fachlich, Woche 7 dient als Lehrdemo für API, Dashboards und
+Deployment.
 
-## 📚 Pädagogische Einführung: Themen, Konzepte, Tools
+- Notebooks liefern Schritt-für-Schritt-Materialien mit Erklärungen,
+  Übungen und Referenzfassungen.
+- Streamlit-Apps machen Modelle, Visualisierungen und Arbeitsabläufe
+  direkt ausprobierbar.
+- Woche 7 ergänzt eine lokale FastAPI-Demo mit Dashboards.
+- Requirements-Dateien sind pro Woche getrennt, damit Installationen
+  klein und nachvollziehbar bleiben.
 
-AMALEA ist so gebaut, dass du in jeder Woche ein in sich geschlossenes Lernpaket aus Notebook und App bekommst. In W01–W02 übst du sauberen Python-Code, den QUA³CK-Prozess und Daten-Transformationen mit Pandas/NumPy; Streamlit dient als Brücke, um sofort interaktive Ergebnisse zu sehen. W03–W04 vertiefen klassisches ML: Sklearn-Pipelines, Klassifikation/Regression, Ensembles, Clustering und Anomalie-Detektion. Hier lernst du, Metriken zu interpretieren, mit MLflow zu tracken und erste Versionierung von Daten/Artefakten mit DVC zu probieren. W05 führt dich in Deep Learning mit Keras (Sequential/Functional API), Initialisierung/Regularisierung und leichtem Transfer Learning; du übst, Overfitting zu erkennen und Seeds konsistent zu halten. In W06 folgen Computer Vision und NLP: CNN-Grundlagen, Augmentation, OpenCV-Feature-Extraction, Transfer-Learning-Patterns sowie eine CPU-freundliche Transformers-Demo für Text. W07 bündelt alles in einem Deployment-Modul: FastAPI für Inference, leichte HF-Pipelines für Sentiment/QA/Generate, zwei Streamlit-Dashboards für Monitoring/NLP und ein Compose-Stack. Durch Week-Requirements und Lockfiles bleiben Umgebungen reproduzierbar; jede Woche liefert ein lauffähiges Notebook plus App, Executed-Versionen erleichtern den Einstieg, und mit MLflow dokumentierst du deine Experimente. So entsteht Schritt für Schritt ein konsistentes Portfolio.
+## So Arbeitest Du Mit Dem Repository
 
-**Wie du lernen kannst**
-- Folge Woche für Woche; jede Woche hat ein klares Ziel, ein Kernnotebook und eine kleine App.
-- Starte mit den Executed-Notebooks, führe dann selbst aus und variiere Parameter.
-- Baue jede Woche mindestens einen kleinen "Try it" Task (siehe Notebook-Übungen) und dokumentiere dein Ergebnis kurz im Repo (Markdown).
-- Nutze Streamlit-Apps zum schnellen Experimentieren, bevor du Code ins Notebook überträgst.
-- Verwende `mlflow` (W04/W07) für Metrik-Vergleiche und halte Seed-Konfigurationen bei.
+1. Lies zuerst das Kernnotebook der jeweiligen Woche.
+2. Starte danach die passende App oder Demo.
+3. Variiere Parameter, dokumentiere Beobachtungen und vergleiche
+   Ergebnisse.
+4. Nutze Woche 7 gezielt für lokale API- und Deployment-Demonstration.
+5. Arbeite eher kuratiert als vollständig: Nicht jedes Artefakt muss im
+   Kursbetrieb Pflichtbestandteil sein.
+
+## Pädagogische Einordnung
+
+Jede Woche bildet ein eigenes Lernpaket aus Notebook, App oder Demo.
+
+- Woche 1 und 2: Python, Pandas, Streamlit und QUA3CK.
+- Woche 3 und 4: klassisches Machine Learning, Modellvergleich,
+  Metriken und MLflow.
+- Woche 5 und 6: neuronale Netze, Computer Vision und NLP.
+- Woche 7: lokale API, Dashboards und prototypische Deployment-Abläufe.
+
+Die Umgebungen bleiben durch wochenweise Requirements und Lockfiles
+besser steuerbar. Für den Lehrbetrieb ist lokale Ausführung in der Regel
+robuster als vollständige Cloud- oder Container-Pflicht.
+
+## Inhaltsverzeichnis
+
+- [Tech-Stack](#tech-stack)
+- [Roadmap](#roadmap)
+- [Quick Start](#quick-start)
+- [Dependencies](#dependencies)
+- [Run Cheatsheet](#run-cheatsheet)
+- [Installation und Status](#support-und-ressourcen)
+- [Repository-Struktur](#repository-struktur)
+- [Kursinhalte](#kursinhalte)
+- [Support Und Ressourcen](#support-und-ressourcen)
+
+## Tech-Stack
+
+- Python 3.11+, Pandas und NumPy für Datenverarbeitung und Analyse.
+- scikit-learn für klassisches Machine Learning.
+- TensorFlow und Keras für Deep-Learning-Einstiege.
+- Streamlit für kleine interaktive Anwendungen.
+- Docker und Docker Compose für reproduzierbare Umgebungen.
+- MLflow für Experiment-Tracking.
+- FastAPI für die lokale API-Demo in Woche 7.
+- QUA3CK als Prozessrahmen für die didaktische Struktur.
+
+## Roadmap
+
+### Phase 1: Grundlagen
+
+- Woche 01: Python-Grundlagen und QUA3CK.
+- Woche 02: Streamlit und Pandas.
+
+### Phase 2: Machine Learning
+
+- Woche 03: klassisches Machine Learning mit scikit-learn.
+- Woche 04: fortgeschrittene Algorithmen und MLflow.
+
+### Phase 3: Deep Learning Und KI
+
+- Woche 05: neuronale Netze.
+- Woche 06: Computer Vision und NLP.
+
+### Phase 4: Deployment Und Integration
+
+- Woche 07: FastAPI-Demo, Dashboards und lokale Bereitstellung.
 
 ---
 
-## 📋 Inhaltsverzeichnis
-
-- [Der Tech-Stack](#-der-tech-stack-industrie-standard)
-- [Deine Roadmap](#-deine-roadmap-7-wochen)
-- [Quick Start](#-quick-start-docker)
-- [Repository-Struktur](#-repository-struktur)
-- [Kursinhalte & Portfolio](#-kursinhalte--portfolio-projekte)
-- [Support](#-support)
-
----
-
-##  Der Tech-Stack (Industrie-Standard)
-
-Wir nutzen Tools, die du auch im Job finden wirst:
-
-| Kategorie | Tools | Warum? |
-|---|---|---|
-| **Core** | 🐍 Python 3.11+, Pandas, NumPy | Der Gold-Standard für Data Science. |
-| **ML & AI** | 🤖 Scikit-Learn, TensorFlow, Hugging Face | Von klassischem ML bis zu modernen Transformern. |
-| **App** | 🎈 Streamlit | Der schnellste Weg von Daten zur Web-App. |
-| **Ops** | 🐳 Docker, MLflow | Reproduzierbare Umgebungen & Experiment-Tracking. |
-| **Process** | 🦆 QUA³CK | Ein Framework, das Chaos in Struktur verwandelt. |
-
----
-
-## 🗺️ Deine Roadmap (7 Wochen)
-
-Der Kurs ist modular aufgebaut. Jede Woche liefert ein fertiges Projekt für dein Portfolio.
-
-### Phase 1: Foundations & Engineering
-*   **📂 Woche 01: Python & QUA³CK**
-    *   *Focus:* Clean Code, Docker-Setup, Projekt-Strukturierung.
-*   **📂 Woche 02: Data Apps**
-    *   *Focus:* Interaktive Dashboards mit Streamlit & Pandas.
-
-### Phase 2: Machine Learning Core
-*   **📂 Woche 03: ML Engineering**
-    *   *Focus:* Scikit-Learn Pipelines, Klassifikation & Regression.
-*   **📂 Woche 04: Advanced Algorithms**
-    *   *Focus:* Ensemble Methods, Unsupervised Learning, MLOps.
-
-### Phase 3: Deep Learning & AI
-*   **📂 Woche 05: Neural Networks**
-    *   *Focus:* TensorFlow/Keras, Deep Learning Grundlagen.
-*   **📂 Woche 06: Computer Vision & NLP**
-    *   *Focus:* CNNs, Transformer, Hugging Face.
-
-### Phase 4: Production
-*   **📂 Woche 07: Deployment**
-    *   *Focus:* Cloud-Deployment, Model Serving, Finales Portfolio.
-
----
-
-## 🛠️ Quick Start (Docker)
+## Quick Start
 
 ### Voraussetzungen
-*   [Docker Desktop](https://www.docker.com/products/docker-desktop) installiert und laufend.
-*   [Git](https://git-scm.com/) installiert.
 
-Die einfachste Art zu starten. Wir bieten zwei Varianten an:
+- [Docker Desktop](https://www.docker.com/products/docker-desktop),
+  wenn Container verwendet werden sollen.
+- [Git](https://git-scm.com/) für das Klonen des Repositories.
+- Python 3.11+, wenn lokal gearbeitet wird.
 
-### Option A: Full Experience (Empfohlen) 🐳
-Enthält alles (inkl. TensorFlow, MLflow, Hugging Face).
+### Docker: Vollständiges Setup
+
+Enthält auch die schwereren Komponenten wie TensorFlow und MLflow.
 
 ```bash
 # 1. Repository klonen
@@ -123,20 +125,42 @@ docker-compose up --build
 # 3. Services öffnen
 # Jupyter Lab: http://localhost:8888
 # Streamlit App: http://localhost:8501
-# MLflow UI:     http://localhost:5001
+# MLflow UI: http://localhost:5001
 ```
 
-### Option B: Slim & Fast 🚀
-Ohne schwere Deep-Learning-Bibliotheken. Schneller Download.
+### Docker: Schlankes Setup
+
+Ohne schwere Deep-Learning-Bibliotheken, schneller für erste Schritte.
 
 ```bash
 docker compose up -d jupyter-lab-slim streamlit-slim
 ```
-- **Jupyter Slim**: [http://localhost:8889](http://localhost:8889)
-- **Streamlit Slim**: [http://localhost:8502](http://localhost:8502)
 
-### Option C: Einzelne Services 🏗️
-Baue nur das, was du brauchst:
+- Jupyter Slim: [http://localhost:8889](http://localhost:8889)
+- Streamlit Slim: [http://localhost:8502](http://localhost:8502)
+
+### Empfohlener Kursbetrieb
+
+Für den normalen Lehrbetrieb ist derzeit dieser Standard am stabilsten:
+
+- lokal mit Python 3.12 arbeiten
+- nur die jeweils benötigten Wochen-Requirements installieren
+- Slim-Docker nur bei Bedarf als Fallback oder Demo nutzen
+- das Full-Docker-Setup eher für Dozierende und vorbereitete
+  Demonstrationsumgebungen verwenden
+
+### Lokaler Schnellstart
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### Einzelne Container-Services
+
+Baue nur das, was du aktuell brauchst:
 
 ```bash
 # Nur Jupyter für Notebooks
@@ -150,204 +174,216 @@ docker run -p 8501:8501 amalea-streamlit
 
 ---
 
-## 📦 Dependencies (nach Wochen)
+## Dependencies
 
-Das Repository verwendet modulare Requirements-Dateien für effiziente Installationen:
+Das Repository verwendet modulare Requirements-Dateien.
 
-### Core Requirements
-- **`requirements-core.txt`**: Grundlegende Abhängigkeiten (Python, Datenbibliotheken)
-- **`requirements-dev.txt`**: Entwicklungs-Tools (pytest, black, ruff, etc.)
+- `requirements.txt`: leichter Standardstack für den Einstieg.
+- `requirements-core.txt`: Basis-Abhängigkeiten.
+- `requirements-dev.txt`: Test-, Lint- und Entwicklungswerkzeuge.
+- `requirements-week01.txt` bis `requirements-week07.txt`:
+  wochenspezifische Installationen.
+- `requirements-*.lock.txt`: festgeschriebene Versionen für
+  reproduzierbare Setups.
+- `requirements.cloud.txt`: reduzierter Satz für Cloud-nahe Szenarien.
 
-### Wochen-spezifische Requirements
-- **W01-W03**: `requirements-week01.txt` bis `requirements-week03.txt` (Python Basics, Streamlit, ML Grundlagen)
-- **W04**: `requirements-week04.txt` (MLOps, MLflow, DVC)
-- **W05**: `requirements-week05.txt` (TensorFlow, PyTorch)
-- **W06**: `requirements-week06.txt` (OpenCV, Transformers, Computer Vision)
-- **W07**: `requirements-week07.txt` (FastAPI, Deployment-Tools)
-
-### Spezielle Setups
-- **Cloud Deployment**: `requirements.cloud.txt` (optimiert für Streamlit Cloud)
-- **Locked Versions**: `requirements-*.lock.txt` (pinned Versionen für Reproduzierbarkeit)
-
-### Installation Beispiele
+### Installationsbeispiele
 
 ```bash
-# Schnellstart (alles, W01–W07)
-python -m venv .venv && source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements-week06.txt -r requirements-week07.txt
-
-# Standard (W01–W03)
+# Standard für Woche 1 bis 3
 pip install -r requirements-week03.txt
 
-# Mit Dev-Tools
+# Deep Learning
+pip install -r requirements-week05.txt
+
+# Computer Vision und NLP
+pip install -r requirements-week06.txt
+
+# Deployment-Demo
+pip install -r requirements-week07.txt
+
+# Entwicklungstools
 pip install -r requirements-dev.txt
 
-# Reproduzierbare Installation (W07)
+# Reproduzierbare Installation
 pip install -r requirements-07.lock.txt
 ```
 
-> 💡 **Tipp**: Nutze `requirements.txt` als Alias für den leichten W01–W03-Stack. Installiere nur, was du pro Woche brauchst!
+Installiere für den Kursbetrieb möglichst nur die Abhängigkeiten der
+jeweiligen Woche.
 
 ---
 
-## ▶️ Run Cheatsheet (lokal)
+## Run Cheatsheet
 
-### Docker Compose (Empfohlen)
+### Docker Compose
+
 ```bash
-# Volles Setup starten
+# Volles Setup
 docker-compose up --build
 
-# Einzelne Services
+# Schlanke Services
 docker compose up jupyter-lab-slim streamlit-slim
 ```
 
 ### Lokale Entwicklung
+
 ```bash
-# W07 Backend starten
-cd 07_Deployment_Portfolio && export PYTHONPATH=$(pwd)
+# W07 Backend
+cd 07_Deployment_Portfolio
 uvicorn backend.main:app --host 127.0.0.1 --port 8000
 
 # W07 Dashboards lokal
-API_URL=http://127.0.0.1:8000 streamlit run 07_Deployment_Portfolio/04_streamlit_mlops_dashboard.py --server.port 8505
-API_URL=http://127.0.0.1:8000 streamlit run 07_Deployment_Portfolio/05_streamlit_nlp_dashboard.py --server.port 8506
+API_URL=http://127.0.0.1:8000 \
+streamlit run 04_streamlit_mlops_dashboard.py --server.port 8505
+
+API_URL=http://127.0.0.1:8000 \
+streamlit run 05_streamlit_nlp_dashboard.py --server.port 8506
 
 # Compose für W07 (API + beide Dashboards)
-cd 07_Deployment_Portfolio && docker compose up --build
+docker compose up --build
 ```
 
-### Notebook Execution
+### Notebooks
+
 ```bash
-# CV/NLP Notebooks automatisch ausführen
+# CV-Notebooks gesammelt ausführen
 ./run_cv_notebooks.sh
 
-# Einzelne Woche starten
-cd 01_Python_Grundlagen && jupyter lab
+# Beispiel: Woche 1 lokal öffnen
+cd 01_Python_Grundlagen
+jupyter lab
 ```
 
-### Tests & Qualität
+### Tests Und Qualität
+
 ```bash
-# Alle Tests ausführen
 pytest
-
-# Code-Qualität prüfen
 make lint
-
-# Formatierung
-make format
+make fmt
 ```
 
-> 🔧 **Makefile**: Nutze `make install`, `make test`, `make lint` für automatisierte Tasks.
+Für wiederkehrende Abläufe stehen zusätzlich `make install`,
+`make test` und `make lint` bereit.
 
 ---
 
-## 📁 Repository-Struktur
+## Repository-Struktur
 
-Das Repository ist nach den Kurswochen gegliedert und enthält alle notwendigen Ressourcen für einen vollständigen Data-Science-Kurs:
+Das Repository ist nach Kurswochen gegliedert und enthält die
+wichtigsten Materialien für Lehre, Übungen und Demonstrationen.
 
 ```text
 amalea/
-├── 📂 01_Python_Grundlagen/           # Python Basics & QUA³CK Framework
-│   ├── 📄 *.ipynb                     # Notebooks (inkl. executed Versionen)
-│   ├── 🐍 *.py                        # Streamlit Apps & Skripte
-│   ├── 🐳 Dockerfile                  # Lokaler Docker Build
-│   ├── 📋 requirements.txt            # Abhängigkeiten
-│   └── 📄 README.md                   # Wochen-Dokumentation
-├── 📂 02_Streamlit_und_Pandas/        # Interaktive Data Apps
-├── 📂 03_Machine_Learning/            # ML Pipelines & Modelle
-├── 📂 04_Advanced_Algorithms/         # Ensembles & Unsupervised Learning
-├── 📂 05_Neural_Networks/             # Deep Learning mit TensorFlow
-├── 📂 06_Computer_Vision_NLP/         # CV & NLP mit Transformers
-├── 📂 07_Deployment_Portfolio/        # Production Deployment & APIs
-├── 📂 executed_notebooks/             # Ausgeführte Notebook-Versionen
-├── 📂 datasets/                       # Kurs-Datensätze
-├── 📂 Vorlesungseinheiten/              # Vertiefende Vorlesungseinheiten
-├── 📂 tests/                          # Test-Suite
-├── 📂 BACKUP_Original_AMALEA_Notebooks/ # Backup der Originale
-├── 🐳 docker-compose.yml              # Multi-Service Setup
-├── 🐳 Dockerfile.*                    # Verschiedene Docker-Konfigurationen
-├── 📋 requirements*.txt               # Modular requirements pro Woche
-├── 🔧 Makefile                        # Build & Development Tasks
-├── ⚙️ pytest.ini                       # Test-Konfiguration
-├── 🌐 nightwatch.conf.js              # E2E Testing
-├── 📄 README.md                       # Diese Datei
-├── 📄 DEVELOPER_GUIDE.md              # Entwicklungsrichtlinien
-├── 📄 KURSBESCHREIBUNG.md             # Kurs-Details
-├── 📄 Glossar_Alle_Begriffe_erklärt.ipynb # Fachbegriffe erklärt
-├── 📄 ML_DL_Mathematik.ipynb          # Mathematische Grundlagen
-└── 📄 LICENSE.md                      # Lizenz-Informationen
+├── 01_Python_Grundlagen/
+├── 02_Streamlit_und_Pandas/
+├── 03_Machine_Learning/
+├── 04_Advanced_Algorithms/
+├── 05_Neural_Networks/
+├── 06_Computer_Vision_NLP/
+├── 07_Deployment_Portfolio/
+├── executed_notebooks/
+├── datasets/
+├── Vorlesungseinheiten/
+├── tests/
+├── docker-compose.yml
+├── Dockerfile.*
+├── requirements*.txt
+├── Makefile
+├── pytest.ini
+├── nightwatch.conf.js
+├── README.md
+├── DEVELOPER_GUIDE.md
+├── DOZENTENLEITFADEN.md
+├── KURSBESCHREIBUNG.md
+└── LICENSE.md
 ```
 
 ---
 
-## 📚 Kursinhalte & Portfolio-Projekte
+## Kursinhalte
 
-Der Kurs ist in 7 Wochen gegliedert; alle Inhalte sind production-ready mit Executed-Notebooks, Backend und Dashboards.
+### Überblick Nach Wochen
 
-| Woche | Thema |
-|-------|-------|
-| **01** | Python Grundlagen & QUA³CK Framework |
-| **02** | Streamlit & Pandas für interaktive Apps |
-| **03** | Machine Learning Pipelines |
-| **04** | Advanced Algorithms & MLOps |
-| **05** | Neuronale Netze |
-| **06** | Computer Vision & NLP |
-| **07** | Deployment & Portfolio |
+- Woche 01: Python-Grundlagen, Pandas, QUA3CK und erste Apps.
+- Woche 02: Streamlit-Ausführungsmodell und kleine Daten-Apps.
+- Woche 03: Klassifikation, Regression und Modellintegration.
+- Woche 04: Entscheidungsbäume, KNN, Clustering und MLflow.
+- Woche 05: neuronale Netze und Trainingsverhalten.
+- Woche 06: Computer Vision, Augmentation und Transfer Learning.
+- Woche 07: lokale API, Dashboards und Deployment-Demo.
 
-### Aktueller Stand im Repo (Auszug; production-ready)
+### Aktueller Stand Im Repository
 
-| Woche | Kern-Notebooks | Apps / Skripte | Status |
-|-------|----------------|----------------|--------|
-| 01 | `00_Python_in_3_Stunden.ipynb`, `01_Docker_für_Data_Science.ipynb`, `Glossar_Alle_Begriffe_erklärt.ipynb`, `03_QUA3CK_Prozessmodell.ipynb` | `01_Python_Grundlagen/uebungs_app.py`, `01_Python_Grundlagen/meine_erste_app.py`, `01_Python_Grundlagen/streamlit_komponenten.py` | ✅ Fertig |
-| 02 | `02_Streamlit_und_Pandas/01_Erste_Streamlit_App_fixed.ipynb` | `02_Streamlit_und_Pandas/example_app.py`, `02_Streamlit_und_Pandas/hello_streamlit.py`, `02_Streamlit_und_Pandas/streamlit_komponenten.py` | ✅ Fertig |
-| 03 | `03_Machine_Learning/02_ML_in_Streamlit_fixed.ipynb` | `03_Machine_Learning/iris_ml_app.py`, `03_Machine_Learning/housing_regression_app.py` | ✅ Fertig |
-| 04 | `04_Advanced_Algorithms/02_MLFlow_Big3_Tracking.ipynb`, `04_Advanced_Algorithms/03_Bäume_Nachbarn_und_Clustering.ipynb` | `04_Advanced_Algorithms/streamlit_komponenten.py` | ✅ Fertig |
-| 05 | `05_Neural_Networks/` (mehrere Notebooks) | `05_Neural_Networks/streamlit_komponenten.py` | ✅ Fertig |
-| 06 | `06_Computer_Vision_NLP/06_01_neu_CNN_Basics.ipynb` u.a. | Runner: `run_cv_notebooks.sh` erzeugt Executed-Notebooks in `executed_notebooks/` | ✅ Fertig |
-| 07 | `07_Deployment_Portfolio/` (Notebooks in `executed_notebooks/`) | FastAPI-Demo-API (`backend/main.py`), Streamlit-Dashboards, Compose-Stack | ✅ Fertig |
+- Woche 01 bis 04: stabiler Kurskern für regulären Lehrbetrieb.
+- Woche 05 und 06: fachliche Vertiefungen mit höherem Ressourcenbedarf.
+- Woche 07: Lehrdemo mit lokalem Backend und Dashboards.
 
-> ℹ️ **Executed Notebooks**: Alle wichtigen Notebooks liegen in `executed_notebooks/` als HTML/PDF für schnelle Referenz.
-> 🔧 **Docker Setup**: Mehrere Dockerfile-Varianten (jupyter, streamlit, slim/full) für verschiedene Use-Cases.
-> 📊 **MLflow Tracking**: Experiment-Logs in `mlruns/` für Reproduzierbarkeit.
+Wichtige Beispiele:
 
-### Portfolio-Apps (Beispiele)
+- Woche 01:
+  `00_Python_in_3_Stunden.ipynb`,
+  `03_QUA3CK_Prozessmodell.ipynb`,
+  `01_Python_Grundlagen/uebungs_app.py`
+- Woche 02:
+  `02_Streamlit_und_Pandas/01_Erste_Streamlit_App_fixed.ipynb`,
+  `02_Streamlit_und_Pandas/example_app.py`
+- Woche 03:
+  `03_Machine_Learning/02_ML_in_Streamlit_fixed.ipynb`,
+  `03_Machine_Learning/iris_ml_app.py`
+- Woche 04:
+  `04_Advanced_Algorithms/02_MLFlow_Big3_Tracking.ipynb`,
+  `04_Advanced_Algorithms/03_Bäume_Nachbarn_und_Clustering.ipynb`
+- Woche 07:
+  `07_Deployment_Portfolio/01_MLOps_und_Deployment.ipynb`,
+  `07_Deployment_Portfolio/backend/main.py`,
+  `07_Deployment_Portfolio/04_streamlit_mlops_dashboard.py`
 
-**Auszug (W01–W07):**
-1.  **Python Fundamentals Dashboard** (`01_Python_Grundlagen/uebungs_app.py`)
-2.  **Streamlit Starter** (`01_Python_Grundlagen/meine_erste_app.py`)
-3.  **Streamlit Pandas Demo** (`02_Streamlit_und_Pandas/example_app.py`)
-4.  **Hello Streamlit Widgets** (`02_Streamlit_und_Pandas/hello_streamlit.py`)
-5.  **Iris ML Playground** (`03_Machine_Learning/iris_ml_app.py`)
-6.  **Housing Regression Explorer** (`03_Machine_Learning/housing_regression_app.py`)
-7.  **MLOps Monitoring Dashboard** (`07_Deployment_Portfolio/04_streamlit_mlops_dashboard.py`)
-8.  **NLP Demo Dashboard** (`07_Deployment_Portfolio/05_streamlit_nlp_dashboard.py`)
+Hinweise:
 
-**Weitere Apps:** ML-, CV- und Deployment-Demos stehen in den jeweiligen Wochenordnern bereit.
+- Referenzfassungen liegen je nach Modul als `.nbconvert.ipynb`, in
+  modulinternen `executed/`-Ordnern oder als lokal erzeugbare Ausgabe
+  vor.
+- Der Ordner `executed_notebooks/` ist als Ausgabeort vorgesehen, nicht
+  als vollständiges Archiv garantiert.
+- Woche 7 ist standardmäßig auf Demo-Betrieb ausgelegt. Der NLP-Teil
+  arbeitet ohne Zusatzkonfiguration im heuristischen Modus.
 
----
-
----
-
-## 👨‍🏫 Support & Ressourcen
+## Support Und Ressourcen
 
 ### Dokumentation
-- 📖 **[DEVELOPER_GUIDE.md](DEVELOPER_GUIDE.md)**: Detaillierte Entwicklungsrichtlinien und Best Practices
-- 📚 **[KURSBESCHREIBUNG.md](KURSBESCHREIBUNG.md)**: Vollständige Kursbeschreibung und Lernziele
-- 🔧 **[Makefile](Makefile)**: Automatisierte Build- und Development-Tasks
-- 🧪 **Tests**: Vollständige Test-Suite in `tests/` mit pytest-Konfiguration
+
+- [INSTALLATION.md](INSTALLATION.md): kompakte Matrix, was lokal und per
+  Docker wie installierbar ist und was praktisch validiert wurde.
+- [DEVELOPER_GUIDE.md](DEVELOPER_GUIDE.md): technische Dokumentation für
+  Aufbau, Betrieb und Entwicklung.
+- [DOZENTENLEITFADEN.md](DOZENTENLEITFADEN.md): empfohlener Pflichtpfad
+  und Hinweise für den Kursbetrieb.
+- [BEWERTUNGSRUBRIK_PORTFOLIO.md](BEWERTUNGSRUBRIK_PORTFOLIO.md):
+  kompakte Bewertungslogik für Portfolio- und Projektleistungen.
+- [KURZGUIDE_PORTFOLIO_STUDIERENDE.md](KURZGUIDE_PORTFOLIO_STUDIERENDE.md):
+  einseitige Schnellorientierung für Studierende zur Portfolioleistung.
+- [ABGABE_TEMPLATE_PORTFOLIO.md](ABGABE_TEMPLATE_PORTFOLIO.md):
+  kompakte Strukturvorlage für studentische Portfolio-Abgaben.
+- [AUFGABENSTELLUNG_PORTFOLIO.md](AUFGABENSTELLUNG_PORTFOLIO.md):
+  Rahmen für Pflichtumfang, Kür und Abgabeform der Portfolioleistung.
+- [SITZUNGSPLAN_7_WOCHEN.md](SITZUNGSPLAN_7_WOCHEN.md): konkreter
+  Ablaufvorschlag für sieben Lehrsitzungen.
+- [KURSBESCHREIBUNG.md](KURSBESCHREIBUNG.md): formale Kursbeschreibung
+  und Lernziele.
+- [Makefile](Makefile): wiederkehrende Entwicklungs- und Testaufgaben.
 
 ### Bei Problemen
-1. **Dokumentation prüfen**: Schaue in den Wochen-Ordnern nach READMEs und der DEVELOPER_GUIDE.md
-2. **Executed Notebooks**: Nutze `executed_notebooks/` für funktionierende Beispiele
-3. **Docker Issues**: Mehrere Dockerfile-Varianten verfügbar (slim/full)
-4. **Dependencies**: Modulare requirements-Dateien für verschiedene Setups
 
-### Kurs-Forum & Community
-- Nutze das Kurs-Forum für fachliche Fragen
-- Teile deine Lösungen in `Vorlesungseinheiten/` für andere Lernende
-- Bei technischen Problemen: Issues im Repository erstellen
+1. Zuerst die README-Datei des jeweiligen Wochenordners lesen.
+2. Danach technische Details im `DEVELOPER_GUIDE.md` prüfen.
+3. Bei Ausführungsproblemen zunächst die lokale oder schlanke Variante
+   testen.
+4. Nur die Requirements der gerade benötigten Woche installieren.
 
-### Zusätzliche Ressourcen
-- 📊 **Glossar**: `Glossar_Alle_Begriffe_erklärt.ipynb` - Alle Fachbegriffe erklärt
-- 🔢 **Mathematik**: `ML_DL_Mathematik.ipynb` - Mathematische Grundlagen für ML/DL
-- 📁 **Datasets**: Kurs-Datensätze in `datasets/` für praktische Übungen
+### Zusätzliche Materialien
+
+- `Glossar_Alle_Begriffe_erklärt.ipynb` für Begriffe und Konzepte.
+- `ML_DL_Mathematik.ipynb` für mathematische Grundlagen.
+- `datasets/` für Kursdaten.
+- `tests/` für automatisierte Prüfungen ausgewählter Teile des Repos.

@@ -1,89 +1,129 @@
-# 🚀 07 Deployment & Portfolio
+# 07 Deployment & Portfolio
 
-**MLOps, Modern NLP und Production-Ready Deployment (Stand: Work-in-Progress)**
+Dieses Modul bündelt den produktionsnahen Teil des Kurses. Im
+Mittelpunkt stehen drei Themen: eine kleine HTTP-API mit FastAPI, zwei
+Streamlit-Dashboards und der Unterschied zwischen Demo-Betrieb und
+Live-Betrieb.
 
-## 📚 Notebooks (Status)
+## Einordnung
 
-- **01_MLOps_und_Deployment.ipynb** – Kurze CPU-Demo: Iris-LogReg + Export (`artifacts/iris_lr.pkl`), Hinweis auf Serving via FastAPI.
-- **02_NLP_und_Text_Generation.ipynb** – Kurze CPU-Demo: einfache Sentiment-Heuristik + Stub-Text-Gen (kein großes Modell).
-- **03_QUA3CK_MLOps_Integration.ipynb** – QUA³CK-Mini-Flow, Health/Predict-Check gegen das Backend.
+Woche 7 ist als Lehrdemo gedacht. Das Modul ist gut geeignet, um
+Serving, Dashboards, lokale Ausführung und einfache
+Deployment-Abläufe zu besprechen. Es ist nicht als vollständig
+ausgehärteter Produktionsstack dokumentiert.
 
-### Geführter Ablauf
-1) Backend starten (Demo oder Live) oder im Dashboard Demo-Modus lassen.
-2) 01_Notebook: Mini-Train + Export (Artefakt anlegbar für Serving).
-3) 02_Notebook: Sentiment/Gen-Stubs verstehen (schnell, CPU).
-4) 03_Notebook: Health/Predict gegen API prüfen (oder Hinweis lesen, wenn API aus ist).
-5) Dashboards öffnen: erst Demo, dann Live mit `API_URL` setzen. Optional per `docker compose up --build` alles gemeinsam starten.
+## Lernziele
 
-## 🚀 Streamlit Apps (Status)
+- Eine einfache ML-API lokal starten und ansprechen
+- Dashboards mit einer API verbinden
+- Demo-Modus und Live-Modus unterscheiden
+- grundlegende Deployment- und MLOps-Begriffe einordnen
+- Grenzen einer prototypischen Lösung benennen
 
-- **04_streamlit_mlops_dashboard.py** – Dashboard für Iris-Predict-API (`/health`, `/predict`). Demo-Modus integriert (simulierte Metriken), Live-Modus erwartet API.
-- **05_streamlit_nlp_dashboard.py** – UI für Text-Gen/Sentiment/Q&A (`/generate`, `/sentiment`, `/qa`). Demo-Modus integriert, Live-Modus erwartet NLP-API.
+## Materialien
 
-## 🎯 Lernziele (Zielbild)
+### Notebooks
 
-- 🔄 **MLOps Pipeline**: Model Training bis Production Deployment (noch zu verifizieren)
-- 🐳 **Containerization**: Docker für reproduzierbare ML-Services (siehe Ergänzungen unten)
-- 🌐 **API Development**: FastAPI für ML Model Serving (API wird aktuell vorausgesetzt, nicht bereitgestellt)
-- 📊 **Model Monitoring**: Performance Tracking in Production (Dashboard nutzt simulierte Daten)
-- 🤖 **Modern NLP**: Transformer-basierte Text Processing (Backend-Service nötig)
-- 🚀 **Production Deployment**: Skalierbare ML-Anwendungen (Deployment-Schritte noch zu ergänzen/kürzen)
+- **01_MLOps_und_Deployment.ipynb**: kleine Iris-Demo mit Modelltraining und Artefaktexport
+- **02_NLP_und_Text_Generation.ipynb**: kompakte NLP-Demo mit
+  leichtgewichtigen Beispielantworten
+- **03_QUA3CK_MLOps_Integration.ipynb**: Health- und Predict-Checks gegen das Backend
 
-## 📡 Backend (neu, leichtgewichtig)
+### Dashboards
 
-- **FastAPI-Demo-API** unter `backend/main.py`
-	- Endpunkte: `/health`, `/predict` (Iris), `/sentiment`, `/qa`, `/generate`
-	- Läuft vollständig CPU-basiert, keine großen Modelle.
+- **04_streamlit_mlops_dashboard.py**: Dashboard für `/health` und `/predict`
+- **05_streamlit_nlp_dashboard.py**: Oberfläche für `/generate`,
+  `/sentiment` und `/qa`
 
-Start (lokal):
+## Empfohlener Ablauf im Kurs
+
+1. Backend starten oder die Dashboards zunächst im Demo-Modus verwenden.
+2. Das Notebook **01_MLOps_und_Deployment.ipynb** für Training, Export
+   und Serving-Kontext durcharbeiten.
+3. Das Notebook **02_NLP_und_Text_Generation.ipynb** als Beispiel für
+   eine leichtgewichtige NLP-Demo einsetzen.
+4. Das Notebook **03_QUA3CK_MLOps_Integration.ipynb** nutzen, um
+   Requests und Responses gegen die API nachzuvollziehen.
+5. Danach die Dashboards erst im Demo-Modus und anschließend im
+   Live-Modus mit gesetzter `API_URL` öffnen.
+
+## Backend
+
+Die FastAPI-Demo liegt unter `backend/main.py`.
+
+- Endpunkte: `/health`, `/predict`, `/sentiment`, `/qa`, `/generate`
+- Iris-Vorhersagen laufen lokal und CPU-basiert.
+- Die NLP-Endpunkte arbeiten standardmäßig in einem heuristischen
+  Demo-Modus. Dadurch bleibt das Backend ohne große Modell-Downloads
+  lauffähig.
+- Optional kann ein Transformers-Modus aktiviert werden.
+
+### Lokaler Start
+
 ```bash
 cd 07_Deployment_Portfolio
 pip install -r requirements.cloud.txt
 uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Start (Docker Compose, API + beide Dashboards):
+### Optionaler Transformers-Modus
+
+Wer reale Hugging-Face-Pipelines demonstrieren möchte, kann zusätzliche
+Abhängigkeiten installieren und den Modus explizit aktivieren:
+
+```bash
+cd 07_Deployment_Portfolio
+pip install -r ../requirements-week07-transformers.txt
+export AMALEA_ENABLE_TRANSFORMERS=1
+uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Ohne diese Zusatzschritte bleibt das Backend im heuristischen Demo-Modus.
+
+### Start mit Docker Compose
+
 ```bash
 cd 07_Deployment_Portfolio
 docker compose up --build
 ```
-URLs:
-- API: http://localhost:8000
-- MLOps Dashboard: http://localhost:8505
-- NLP Dashboard: http://localhost:8506
 
-## 📱 Streamlit Apps (Starten)
+Verfügbare URLs:
+
+- API: [http://localhost:8000](http://localhost:8000)
+- MLOps-Dashboard: [http://localhost:8505](http://localhost:8505)
+- NLP-Dashboard: [http://localhost:8506](http://localhost:8506)
+
+## Dashboards lokal starten
 
 ```bash
 cd 07_Deployment_Portfolio
 pip install -r requirements.cloud.txt
 
-# MLOps Dashboard (Demo- oder Live-Modus wählbar)
 streamlit run 04_streamlit_mlops_dashboard.py --server.port 8505
-
-# NLP Dashboard (Demo- oder Live-Modus wählbar)
 streamlit run 05_streamlit_nlp_dashboard.py --server.port 8506
 ```
 
 Hinweise:
-- Demo-Modus funktioniert ohne Backend; Live-Modus erwartet API auf `http://localhost:8000` (anpassbar in der Sidebar).
-- Ports nach Bedarf anpassen.
 
-## 🛠️ Technologie-Stack (geplant/teilweise vorhanden)
+- Der Demo-Modus funktioniert ohne Backend.
+- Der Live-Modus erwartet eine erreichbare API unter
+  `http://localhost:8000` oder unter der in der Sidebar gesetzten
+  `API_URL`.
+- Die Dashboards eignen sich gut für Lehre und Demonstration, nicht als
+  Monitoring-Ersatz für einen echten Produktivbetrieb.
 
-### MLOps & Deployment
-- **MLflow** - Experiment Tracking & Model Registry
-- **FastAPI** - High-performance API Framework
-- **Docker** - Containerization & Deployment
-- **Streamlit** - Interactive Dashboards
+## Technische Einordnung
 
-### Modern NLP
-- **Transformers** - State-of-the-art NLP Models
-- **Hugging Face** - Pre-trained Model Hub
-- **Text Generation** - GPT-style Language Models
-- **Multi-task NLP** - Sentiment, Q&A, Summarization
+- **FastAPI** für HTTP-Endpunkte
+- **Streamlit** für einfache Oberflächen
+- **Docker Compose** für den lokalen Mehrdienstbetrieb
+- **MLflow** als begleitendes Thema für Experiment- und Modellverwaltung
+- **optionale Transformers-Integration** für einen erweiterten NLP-Demobetrieb
 
-## 🗺️ Nächste Schritte (Empfohlen)
-- Backend: einfache Tests für Endpunkte ergänzen; optional kleinere Modelle anstelle der Stubs.
-- MLOps/NLP Dashboards: echte Monitoring-Metriken anbinden, Prompt-Limits/Safety weiter ausbauen.
-- Falls nötig: eigene Assets hinzufügen; ungenutzte Beispiel-Daten/Images wurden entfernt.
+## Grenzen des Moduls
+
+- Das Modul zeigt Grundmuster, keine vollständige Betriebsplattform.
+- Die Monitoring-Ansicht arbeitet im Demo-Modus mit simulierten Daten.
+- Für reale NLP-Pipelines sind zusätzliche Abhängigkeiten und meist auch
+  Internetzugang erforderlich.
+- Lehrwert und Nachvollziehbarkeit haben hier Vorrang vor technischer Vollständigkeit.
