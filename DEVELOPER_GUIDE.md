@@ -6,9 +6,15 @@ AMALEA-Umgebung. Das Haupt-README bleibt bewusst allgemeiner und stärker
 auf den Kursablauf ausgerichtet. Für die konkrete Kursdurchführung
 ergänzt [DOZENTENLEITFADEN.md](DOZENTENLEITFADEN.md) diese Datei.
 
+Für Studierende ist das Haupt-README die primäre Einstiegshilfe. Die
+dortige studentische Setup-Anleitung beschreibt jetzt den
+verbindlichen Docker-Compose-Pfad fuer den Kurs. Diese Datei ist bewusst
+technischer und ergänzt den studentischen Pfad um Betriebs-,
+Fallback- und Troubleshooting-Details.
+
 ## Inhalt
 - [Architektur & Module](#architektur--module)
-- [Lokale Entwicklung (ohne Docker)](#lokale-entwicklung-ohne-docker)
+- [Lokale Entwicklung (Technischer Ausnahmefall)](#lokale-entwicklung-technischer-ausnahmefall)
 - [Container & Services (Docker Compose)](#container--services-docker-compose)
 - [MLflow Nutzung](#mlflow-nutzung)
 - [Ports, Volumes & Umgebungsvariablen](#ports-volumes--umgebungsvariablen)
@@ -29,9 +35,11 @@ Die modulare Struktur ermöglicht wochenspezifische Installationen und
 einen schrittweisen Betrieb im Kurs.
 
 ---
-## Lokale Entwicklung (ohne Docker)
+## Lokale Entwicklung (Technischer Ausnahmefall)
 
-Für direkte lokale Entwicklung ohne Containerisierung:
+Fuer direkte lokale Entwicklung ohne Containerisierung. Dieser Pfad ist
+nicht der studentische Kursstandard, sondern fuer Wartung,
+Troubleshooting oder gezielte lokale Analysen gedacht:
 
 ```bash
 # 1. Virtuelle Umgebung erstellen und aktivieren
@@ -124,13 +132,13 @@ docker compose down --volumes  # inkl. Datenlöschung
 Für den regulären Lehrbetrieb ist folgende Kombination derzeit am
 robustesten:
 
-- lokal mit Python 3.12 arbeiten
-- pro Woche nur die jeweilige Requirements-Datei installieren
-- Docker-Slim-Profile nur für kurze Demonstrationen oder bei
-  Onboarding-Problemen einsetzen
-- das Full-Jupyter-Image vor allem für Dozierende, Vorabtests oder
-  vorbereitete Demo-Rechner verwenden
-- Woche 7 standardmäßig im Demo-Modus ohne Transformers betreiben
+- Docker Compose ist der verbindliche Kursstandard.
+- Woche 1 bis 4 laufen standardmaessig im Slim-Profil.
+- Fuer MLflow, Deep Learning und spaetere Deployment-Inhalte wird das
+  Full-Profil verwendet.
+- Lokale Python-Umgebungen bleiben ein technischer Ausnahmeweg.
+- Woche 7 wird standardmaessig weiter im Demo-Modus ohne Transformers
+  betrieben.
 
 ---
 ## MLflow Nutzung

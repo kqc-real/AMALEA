@@ -17,7 +17,8 @@ eine Vollabdeckung aller Artefakte.
 
 Empfohlene Leitlinien:
 
-- lokal vor Docker, wenn keine technische Demonstration nötig ist
+- Docker Compose als gemeinsame Pflichtumgebung für den Kurs nutzen
+- lokale Python-Setups nur als Wartungs- oder Troubleshooting-Pfad behandeln
 - pro Woche genau ein Pflicht-Notebook und höchstens eine Pflicht-App
 - W07 als Lehrdemo behandeln, nicht als verpflichtenden Produktivpfad
 - Tooling immer dem Lernziel unterordnen
@@ -26,11 +27,11 @@ Empfohlene Leitlinien:
 
 Für einen stabilen Lehrbetrieb genügt in der Regel folgendes Setup:
 
-- Python-Umgebung mit den jeweils benötigten Wochen-Requirements
+- Docker-Compose-Slim-Profil für Woche 1 bis 4
+- Docker-Compose-Full-Profil für MLflow sowie Woche 5 bis 7 bei Bedarf
 - Jupyter Lab für Notebooks
 - Streamlit für ausgewählte Apps
 - MLflow nur in Woche 4 und Woche 7 bei Bedarf
-- Docker nur dann, wenn Containerisierung selbst Thema der Sitzung ist
 
 Nicht als Pflicht voraussetzen:
 
@@ -42,18 +43,18 @@ Nicht als Pflicht voraussetzen:
 
 Für die Kursdurchführung haben sich diese Entscheidungen bewährt:
 
-1. Standardmäßig lokal mit Python 3.12 arbeiten.
-2. Pro Sitzung nur die Requirements der tatsächlich genutzten Woche installieren.
-3. `requirements.txt` als leichten Einstieg für Woche 1 bis 3 behandeln.
-4. Woche 5 standardmäßig nur mit `requirements-week05.txt`
+1. Standardmäßig Docker Compose als erste Lernumgebung nutzen.
+2. Woche 1 bis 4 im Slim-Profil starten.
+3. Für MLflow sowie Woche 5 bis 7 bei Bedarf auf das Full-Profil wechseln.
+4. `requirements.txt` nur als technischen Referenzpfad für Woche 1 bis 3 behandeln.
+5. Woche 5 standardmäßig nur mit `requirements-week05.txt`
   fahren; PyTorch nur bei Bedarf über
   `requirements-week05-torch.txt` ergänzen.
-5. Woche 7 standardmäßig mit `requirements-week07.txt` und
+6. Woche 7 standardmäßig mit `requirements-week07.txt` und
   Demo-Modus betreiben; Transformers nur gezielt über
   `requirements-week07-transformers.txt` zuschalten.
-6. Docker-Slim als Ausweichpfad oder kurze Vorführung nutzen,
-  nicht als erste Standardumgebung für alle.
-7. Full-Docker vor allem für Lehrende, Vorabtests und
+7. Lokale Python-Umgebungen nur als Ausweichpfad oder für Debugging nutzen.
+8. Full-Docker vor allem für Lehrende, Vorabtests und
   vorbereitete Demo-Rechner einplanen.
 
 Die ausführlichere Matrix mit lokalem und Docker-Status steht in
@@ -65,13 +66,13 @@ Die ausführlichere Matrix mit lokalem und Docker-Status steht in
 
 Pflicht:
 
+- `01_Python_Grundlagen/01_Docker_für_Data_Science.ipynb`
 - `01_Python_Grundlagen/00_Python_in_3_Stunden.ipynb`
 - `01_Python_Grundlagen/03_QUA3CK_Prozessmodell.ipynb`
 - `01_Python_Grundlagen/uebungs_app.py`
 
 Optional:
 
-- `01_Python_Grundlagen/01_Docker_für_Data_Science.ipynb`
 - `01_Python_Grundlagen/meine_erste_app.py`
 
 Didaktischer Fokus:

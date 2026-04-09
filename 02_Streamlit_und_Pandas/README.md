@@ -26,7 +26,24 @@ Streamlit und dem Aufbau kleiner Dashboards.
 
 ## Start
 
-### Lokal
+### Docker-Standardpfad
+
+```bash
+cd ..
+docker compose --profile slim up -d jupyter-lab-slim streamlit-slim
+```
+
+Für Woche 2 arbeitet ihr in der Regel über die vorbereitete Docker-
+Umgebung und startet Streamlit anschließend im passenden Ordner.
+
+### Streamlit-App starten
+
+```bash
+cd 02_Streamlit_und_Pandas
+streamlit run example_app.py
+```
+
+### Lokaler Zusatzpfad (nur technischer Ausnahmefall)
 
 ```bash
 cd 02_Streamlit_und_Pandas
@@ -34,16 +51,12 @@ pip install -r requirements.txt
 streamlit run example_app.py
 ```
 
-### Mit Docker
-
-```bash
-docker-compose up --build
-```
-
 ## Hinweise
 
 - Streamlit führt das Skript bei jeder Interaktion erneut aus. Dieser
   Ablauf sollte in Übungen explizit thematisiert werden.
+- Für den regulären Kursbetrieb bleibt Docker auch in Woche 2 der
+  Standardpfad.
 - Für größere Datenmengen sind Vektorisierung und Caching wichtiger als
   komplexe Oberflächen.
 - Für erste Übungen reicht meist `hello_streamlit.py`;

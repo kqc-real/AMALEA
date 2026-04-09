@@ -482,9 +482,9 @@ Bevor wir in die praktische Umsetzung des Projekts eintauchen, stellen wir siche
 
 Stellen Sie sicher, dass die folgenden Werkzeuge auf Ihrem System installiert und über die Kommandozeile (Terminal) erreichbar sind:
 
--   **Python (Version 3.9+):** Die Programmiersprache, in der wir arbeiten. Überprüfen Sie Ihre Version mit `python3 --version`.
 -   **Git:** Das Standardwerkzeug für die Versionskontrolle unseres Codes. Überprüfen Sie die Installation mit `git --version`.
--   **Docker (Optional, aber empfohlen):** Ein Werkzeug zur Containerisierung, das sicherstellt, dass unsere Anwendung in jeder Umgebung identisch läuft. Dies ist eine Kerntechnologie für modernes MLOps und wird für das Deployment in der Cloud oft vorausgesetzt. Überprüfen Sie die Installation mit `docker --version`.
+-   **Docker Desktop / Docker Compose:** Die verbindliche Laufzeitumgebung für den Kurs. Damit stellen wir sicher, dass unsere Anwendung in jeder Umgebung identisch läuft. Überprüfen Sie die Installation mit `docker --version` und `docker compose version`.
+-   **Python (Version 3.9+):** Optional als lokales Werkzeug für Sonderfälle, Editor-Integrationen oder gezieltes Troubleshooting. Für den regulären Kursweg ist Docker der Standardpfad.
 
 ### 2. Der MLflow Tracking Server
 

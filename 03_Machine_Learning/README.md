@@ -28,7 +28,31 @@ Vorhersage, Modellvergleich und die Einbindung in kleine Anwendungen.
 
 ## Start
 
-### Lokal
+### Docker-Standardpfad
+
+```bash
+cd ..
+docker compose --profile slim up -d jupyter-lab-slim streamlit-slim
+```
+
+Für Woche 3 arbeitet ihr in der Regel über die vorbereitete Docker-
+Umgebung und startet die gewünschte App danach im passenden Ordner.
+
+### Streamlit-App starten
+
+```bash
+cd 03_Machine_Learning
+streamlit run iris_ml_app.py
+```
+
+Für das Regressionsbeispiel:
+
+```bash
+cd 03_Machine_Learning
+streamlit run housing_regression_app.py
+```
+
+### Lokaler Zusatzpfad (nur technischer Ausnahmefall)
 
 ```bash
 cd 03_Machine_Learning
@@ -43,15 +67,11 @@ cd 03_Machine_Learning
 streamlit run housing_regression_app.py
 ```
 
-### Mit Docker
-
-```bash
-docker-compose up --build
-```
-
 ## Hinweise
 
 - Die Apps eignen sich gut, um Metriken, Eingabefeatures und
   Modellverhalten im Plenum zu diskutieren.
+- Für den regulären Kursbetrieb bleibt Docker auch in Woche 3 der
+  Standardpfad.
 - Der didaktische Schwerpunkt sollte auf Modellverständnis liegen,
   nicht auf möglichst vielen Algorithmen.

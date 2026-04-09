@@ -11,13 +11,17 @@ Stand: 8. April 2026.
 
 Für den regulären Kursbetrieb ist derzeit dieser Pfad am robustesten:
 
-- lokal mit Python 3.12 arbeiten
-- nur die Requirements der jeweils benötigten Woche installieren
-- Docker-Slim nur als Fallback oder Demo verwenden
-- Full-Docker vor allem für Lehrende oder vorbereitete Demo-Rechner nutzen
+- Docker Compose als verpflichtenden Studierendenpfad verwenden
+- Woche 1 bis 4 standardmaessig im Slim-Profil starten
+- fuer MLflow sowie Woche 5 bis 7 bei Bedarf auf das Full-Profil wechseln
+- lokale Python-Installationen nur als technischen Ausnahmefall nutzen
 - Woche 7 standardmäßig im Demo-Modus ohne Transformers betreiben
 
-## Lokale Installationen
+## Technische Referenz: Lokale Installationen
+
+Die folgenden lokalen Installationen bleiben fuer Wartung,
+Troubleshooting und gezielte Einzeltests dokumentiert. Sie sind nicht
+der primaere Studierendenpfad.
 
 ### Basis und Wochen-Stacks
 
@@ -74,7 +78,19 @@ Hinweise zum Full-Jupyter-Build:
 
 ## Konkrete Installationspfade
 
-### Lokaler Schnellstart
+### Docker Slim
+
+```bash
+docker compose --profile slim up -d jupyter-lab-slim streamlit-slim
+```
+
+### Docker Full
+
+```bash
+docker compose --profile full up -d
+```
+
+### Lokaler Schnellstart (Technischer Ausnahmefall)
 
 ```bash
 python -m venv .venv
@@ -116,26 +132,15 @@ pip install -r requirements-week07-transformers.txt
 export AMALEA_ENABLE_TRANSFORMERS=1
 ```
 
-### Docker Slim
-
-```bash
-docker compose up -d jupyter-lab-slim streamlit-slim
-```
-
-### Docker Full
-
-```bash
-docker compose --profile full up -d
-```
-
 ## Interpretation der Matrix
 
 - `OK` bedeutet: in dieser Überarbeitung praktisch installiert oder gebaut.
 - `nicht separat geprüft` bedeutet: nicht gesondert in einer frischen
   Umgebung verifiziert, aber vom dokumentierten Requirements-Aufbau
   abgedeckt.
-- Für den Kursbetrieb sollte nicht der größte mögliche Stack gewählt
-  werden, sondern der kleinste Stack, der das jeweilige Lernziel trägt.
+- Fuer den Kursbetrieb startet ihr zuerst den Docker-Pflichtpfad und
+  waehlt dann das kleinste passende Compose-Profil fuer das jeweilige
+  Lernziel.
 
 ## Verwandte Dokumente
 

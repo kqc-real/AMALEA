@@ -1,7 +1,7 @@
 # Woche 5: Neuronale Netze
 
 Woche 5 führt in die Grundideen des Deep Learning ein. Behandelt werden
-Aufbau und Training einfacher neuronaler Netze sowie typische Begriffe
+Aufbau und Training einfacher neuronaler Netze sowie zentrale Begriffe
 wie Aktivierungsfunktion, Backpropagation und Hyperparameter.
 
 ## Lernziele
@@ -10,14 +10,35 @@ wie Aktivierungsfunktion, Backpropagation und Hyperparameter.
 - Aktivierungsfunktionen und Softmax einordnen
 - Backpropagation und Gradientenverfahren fachlich beschreiben
 - typische Trainingsprobleme erkennen und erste Gegenmaßnahmen ableiten
-- ein kleines Deep-Learning-Beispiel im Notebook und in Streamlit nachvollziehen
+- ein kleines Deep-Learning-Beispiel im Notebook und in Streamlit
+  nachvollziehen
 
 ## Materialien
 
-- `04_Neural_Networks_in_Streamlit.ipynb`: Hauptnotebook für Grundlagen und Beispiele
+- `04_Neural_Networks_in_Streamlit.ipynb`: Hauptnotebook für Grundlagen
+  und Beispiele
 - `neural_network_playground.py`: begleitende Streamlit-Anwendung zum Experimentieren
 
 ## Start
+
+### Docker-Standardpfad
+
+```bash
+cd ..
+docker compose --profile full up -d
+```
+
+Danach arbeitet ihr in Woche 5 in der laufenden Umgebung in der Regel
+mit dem Notebook `04_Neural_Networks_in_Streamlit.ipynb`.
+
+### Streamlit-App starten
+
+```bash
+cd 05_Neural_Networks
+streamlit run neural_network_playground.py
+```
+
+### Lokaler Zusatzpfad (nur technischer Ausnahmefall)
 
 ```bash
 cd /Users/kqc/amalea
@@ -26,15 +47,10 @@ cd 05_Neural_Networks
 jupyter notebook 04_Neural_Networks_in_Streamlit.ipynb
 ```
 
-Optional die Streamlit-App starten:
-
-```bash
-cd 05_Neural_Networks
-streamlit run neural_network_playground.py
-```
-
 ## Hinweise
 
+- Für den regulären Kursbetrieb bleibt Docker auch in Woche 5 der
+  Standardpfad.
 - TensorFlow ist ressourcenintensiver als die bisherigen Wochen. Für
   schwächere Rechner kann eine CPU-Ausführung mit reduzierten Parametern
   sinnvoll sein.

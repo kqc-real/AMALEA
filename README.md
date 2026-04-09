@@ -20,7 +20,7 @@ Deployment.
 
 AMALEA ist als wöchentlich gegliederte Lehrsammlung aufgebaut. Der
 stabile Kurskern liegt in Woche 1 bis 4. Woche 5 und 6 erweitern den
-Kurs fachlich, Woche 7 dient als Lehrdemo für API, Dashboards und
+Kurs fachlich, Woche 7 dient als Lehrdemo für APIs, Dashboards und
 Deployment.
 
 - Notebooks liefern Schritt-für-Schritt-Materialien mit Erklärungen,
@@ -33,13 +33,13 @@ Deployment.
 
 ## So Arbeitest Du Mit Dem Repository
 
-1. Lies zuerst das Kernnotebook der jeweiligen Woche.
-2. Starte danach die passende App oder Demo.
-3. Variiere Parameter, dokumentiere Beobachtungen und vergleiche
-   Ergebnisse.
-4. Nutze Woche 7 gezielt für lokale API- und Deployment-Demonstration.
-5. Arbeite eher kuratiert als vollständig: Nicht jedes Artefakt muss im
-   Kursbetrieb Pflichtbestandteil sein.
+1. Starte mit dem Kernnotebook der jeweiligen Woche.
+2. Öffne danach die passende App oder Demo.
+3. Variiere Parameter, halte Beobachtungen fest und vergleiche die
+  Ergebnisse.
+4. Nutze Woche 7 gezielt für lokale API- und Deployment-Demonstrationen.
+5. Arbeite bewusst kuratiert: Nicht jedes Artefakt muss im Kursbetrieb
+  verpflichtend behandelt werden.
 
 ## Pädagogische Einordnung
 
@@ -52,17 +52,20 @@ Jede Woche bildet ein eigenes Lernpaket aus Notebook, App oder Demo.
 - Woche 7: lokale API, Dashboards und prototypische Deployment-Abläufe.
 
 Die Umgebungen bleiben durch wochenweise Requirements und Lockfiles
-besser steuerbar. Für den Lehrbetrieb ist lokale Ausführung in der Regel
-robuster als vollständige Cloud- oder Container-Pflicht.
+besser steuerbar. Für den Lehrbetrieb ist eine gemeinsame
+Docker-Compose-Umgebung der verbindliche Standard, damit Notebooks,
+Apps und spätere MLOps-Bausteine auf allen Rechnern gleich starten.
 
 ## Inhaltsverzeichnis
 
 - [Tech-Stack](#tech-stack)
 - [Roadmap](#roadmap)
 - [Quick Start](#quick-start)
+- [Student Setup](#student-setup)
 - [Dependencies](#dependencies)
 - [Run Cheatsheet](#run-cheatsheet)
 - [Installation und Status](#support-und-ressourcen)
+- [Copilot und Agenten](#copilot-und-agenten)
 - [Repository-Struktur](#repository-struktur)
 - [Kursinhalte](#kursinhalte)
 - [Support Und Ressourcen](#support-und-ressourcen)
@@ -103,53 +106,115 @@ robuster als vollständige Cloud- oder Container-Pflicht.
 
 ## Quick Start
 
+### Student Setup
+
+Für Studierende gibt es eine kurze Ein-Seiten-Anleitung in
+[STUDENT_SETUP.md](STUDENT_SETUP.md).
+
+Dort sind die Schritte für macOS und Windows zu Git,
+Docker Desktop, Docker Compose und den ersten Funktionstest getrennt
+beschrieben.
+
 ### Voraussetzungen
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop),
-  wenn Container verwendet werden sollen.
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) als
+  verbindliche Laufzeitumgebung für den Kurs.
 - [Git](https://git-scm.com/) für das Klonen des Repositories.
-- Python 3.11+, wenn lokal gearbeitet wird.
+- Optional: Python 3.11+ nur für technische Sonderfälle,
+  Troubleshooting oder lokale Wartung.
 
-### Docker: Vollständiges Setup
+### Docker: Kursstart für Woche 1 bis 4
 
-Enthält auch die schwereren Komponenten wie TensorFlow und MLflow.
+Der studentische Standardpfad startet die schlanke Compose-Umgebung.
 
 ```bash
 # 1. Repository klonen
 git clone <repository-url>
 cd amalea
 
-# 2. Services starten
-docker-compose up --build
+# 2. Docker-Umgebung für den Kurs starten
+docker compose --profile slim up -d jupyter-lab-slim streamlit-slim
 
 # 3. Services öffnen
-# Jupyter Lab: http://localhost:8888
-# Streamlit App: http://localhost:8501
-# MLflow UI: http://localhost:5001
+# Jupyter Lab: http://localhost:8889
+# Streamlit App: http://localhost:8502
 ```
 
-### Docker: Schlankes Setup
+### Docker: Erweiterter Stack ab Woche 4/5
 
-Ohne schwere Deep-Learning-Bibliotheken, schneller für erste Schritte.
+Wenn MLflow, Deep Learning oder spätere Deployment-Bausteine benötigt
+werden, wechselt ihr auf das Full-Profil.
 
 ```bash
-docker compose up -d jupyter-lab-slim streamlit-slim
+docker compose --profile full up -d
 ```
 
-- Jupyter Slim: [http://localhost:8889](http://localhost:8889)
-- Streamlit Slim: [http://localhost:8502](http://localhost:8502)
+- Jupyter Full: [http://localhost:8888](http://localhost:8888)
+- Streamlit Full: [http://localhost:8501](http://localhost:8501)
+- MLflow UI: [http://localhost:5001](http://localhost:5001)
 
 ### Empfohlener Kursbetrieb
 
-Für den normalen Lehrbetrieb ist derzeit dieser Standard am stabilsten:
+Für den regulären Lehrbetrieb gilt dieser Standard:
 
-- lokal mit Python 3.12 arbeiten
-- nur die jeweils benötigten Wochen-Requirements installieren
-- Slim-Docker nur bei Bedarf als Fallback oder Demo nutzen
-- das Full-Docker-Setup eher für Dozierende und vorbereitete
-  Demonstrationsumgebungen verwenden
+- Docker Compose ist der verpflichtende Laufzeitpfad für Studierende.
+- Für Woche 1 bis 4 startet ihr standardmäßig das Slim-Profil.
+- Für MLflow, Deep Learning und spätere Deployment-Inhalte nutzt ihr
+  das Full-Profil.
+- Lokale Python-Umgebungen sind kein Kursstandard, sondern nur ein
+  technischer Ausnahmeweg.
 
-### Lokaler Schnellstart
+### Verbindlicher Setup-Pfad für Studierende
+
+Wenn Studierende die Entwicklungsumgebung neu aufsetzen, ist dieser
+Pfad verbindlich:
+
+```bash
+# 1. Repository klonen
+git clone <repository-url>
+cd amalea
+
+# 2. Standardumgebung für den Kurs starten
+docker compose --profile slim up -d jupyter-lab-slim streamlit-slim
+
+# 3. Laufende Services prüfen
+docker compose ps
+```
+
+Danach gilt für den Kursbetrieb:
+
+1. Für Woche 1 bis 4 arbeitet ihr im Slim-Profil.
+2. Für Woche 4 mit MLflow sowie für Woche 5 bis 7 startet ihr bei
+   Bedarf das Full-Profil.
+3. Lokale Python-Setups sind nur für Troubleshooting oder Wartung
+   vorgesehen.
+
+### Profile nach Kursphase
+
+```bash
+# Woche 1 bis 4
+docker compose --profile slim up -d jupyter-lab-slim streamlit-slim
+
+# Woche 4 mit MLflow sowie Woche 5 bis 7
+docker compose --profile full up -d
+
+# Umgebung wieder beenden
+docker compose down
+```
+
+### Minimaler Starttest
+
+```bash
+# Studentischer Pflichttest
+docker compose --profile slim up -d jupyter-lab-slim streamlit-slim
+docker compose ps
+```
+
+Wenn beide Services als laufend angezeigt werden und die Oberflächen
+unter Port 8889 und 8502 erreichbar sind, ist die studentische
+Entwicklungsumgebung korrekt eingerichtet.
+
+### Lokaler Python-Pfad (nur technischer Ausnahmefall)
 
 ```bash
 python -m venv .venv
@@ -157,6 +222,9 @@ source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
+
+Diesen Pfad nutzt ihr nur, wenn Docker auf einem Gerät vorübergehend
+nicht verfügbar ist oder wenn gezielt lokale Wartung nötig ist.
 
 ### Einzelne Container-Services
 
@@ -211,6 +279,14 @@ pip install -r requirements-07.lock.txt
 
 Installiere für den Kursbetrieb möglichst nur die Abhängigkeiten der
 jeweiligen Woche.
+
+Für Studierende ist die sicherste Reihenfolge:
+
+1. zuerst `requirements.txt`
+2. später nur bei Bedarf zusätzlich `requirements-week04.txt` bis
+  `requirements-week07.txt`
+3. nicht alle Wochen-Requirements gleichzeitig installieren, wenn sie
+  nicht gebraucht werden
 
 ---
 
@@ -348,6 +424,16 @@ Hinweise:
   als vollständiges Archiv garantiert.
 - Woche 7 ist standardmäßig auf Demo-Betrieb ausgelegt. Der NLP-Teil
   arbeitet ohne Zusatzkonfiguration im heuristischen Modus.
+
+## Copilot Und Agenten
+
+Für Copilot-gestützte Repository-Arbeit liegen die projektweiten Regeln
+und Agentenübersichten in `.github/`.
+
+- [.github/README.md](.github/README.md): Übersicht über die
+  spezialisierten Kursagenten und ihren Einsatzbereich.
+- [.github/copilot-instructions.md](.github/copilot-instructions.md):
+  immer geltende Repository-Regeln für Copilot im Workspace.
 
 ## Support Und Ressourcen
 

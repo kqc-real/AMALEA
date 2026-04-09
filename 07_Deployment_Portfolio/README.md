@@ -1,4 +1,4 @@
-# 07 Deployment & Portfolio
+# Woche 7: Deployment und Portfolio
 
 Dieses Modul bündelt den produktionsnahen Teil des Kurses. Im
 Mittelpunkt stehen drei Themen: eine kleine HTTP-API mit FastAPI, zwei
@@ -7,14 +7,14 @@ Live-Betrieb.
 
 ## Einordnung
 
-Woche 7 ist als Lehrdemo gedacht. Das Modul ist gut geeignet, um
+Woche 7 ist als Lehrdemo gedacht. Das Modul eignet sich gut, um
 Serving, Dashboards, lokale Ausführung und einfache
 Deployment-Abläufe zu besprechen. Es ist nicht als vollständig
 ausgehärteter Produktionsstack dokumentiert.
 
 ## Lernziele
 
-- Eine einfache ML-API lokal starten und ansprechen
+- eine einfache ML-API lokal starten und ansprechen
 - Dashboards mit einer API verbinden
 - Demo-Modus und Live-Modus unterscheiden
 - grundlegende Deployment- und MLOps-Begriffe einordnen
@@ -58,7 +58,20 @@ Die FastAPI-Demo liegt unter `backend/main.py`.
   lauffähig.
 - Optional kann ein Transformers-Modus aktiviert werden.
 
-### Lokaler Start
+### Docker-Standardpfad
+
+```bash
+cd 07_Deployment_Portfolio
+docker compose up --build
+```
+
+Verfügbare URLs:
+
+- API: [http://localhost:8000](http://localhost:8000)
+- MLOps-Dashboard: [http://localhost:8505](http://localhost:8505)
+- NLP-Dashboard: [http://localhost:8506](http://localhost:8506)
+
+### Lokaler Zusatzpfad (nur technischer Ausnahmefall)
 
 ```bash
 cd 07_Deployment_Portfolio
@@ -80,19 +93,6 @@ uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
 
 Ohne diese Zusatzschritte bleibt das Backend im heuristischen Demo-Modus.
 
-### Start mit Docker Compose
-
-```bash
-cd 07_Deployment_Portfolio
-docker compose up --build
-```
-
-Verfügbare URLs:
-
-- API: [http://localhost:8000](http://localhost:8000)
-- MLOps-Dashboard: [http://localhost:8505](http://localhost:8505)
-- NLP-Dashboard: [http://localhost:8506](http://localhost:8506)
-
 ## Dashboards lokal starten
 
 ```bash
@@ -111,6 +111,8 @@ Hinweise:
   `API_URL`.
 - Die Dashboards eignen sich gut für Lehre und Demonstration, nicht als
   Monitoring-Ersatz für einen echten Produktivbetrieb.
+- Für den regulären Kursbetrieb ist Docker auch in Woche 7 der
+  Standardpfad.
 
 ## Technische Einordnung
 
@@ -118,7 +120,8 @@ Hinweise:
 - **Streamlit** für einfache Oberflächen
 - **Docker Compose** für den lokalen Mehrdienstbetrieb
 - **MLflow** als begleitendes Thema für Experiment- und Modellverwaltung
-- **optionale Transformers-Integration** für einen erweiterten NLP-Demobetrieb
+- **optionale Transformers-Integration** für einen erweiterten
+  NLP-Demobetrieb
 
 ## Grenzen des Moduls
 
@@ -126,4 +129,5 @@ Hinweise:
 - Die Monitoring-Ansicht arbeitet im Demo-Modus mit simulierten Daten.
 - Für reale NLP-Pipelines sind zusätzliche Abhängigkeiten und meist auch
   Internetzugang erforderlich.
-- Lehrwert und Nachvollziehbarkeit haben hier Vorrang vor technischer Vollständigkeit.
+- Lehrwert und Nachvollziehbarkeit haben hier Vorrang vor technischer
+  Vollständigkeit.
