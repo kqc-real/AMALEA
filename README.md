@@ -431,9 +431,20 @@ Für Copilot-gestützte Repository-Arbeit liegen die projektweiten Regeln
 und Agentenübersichten in `.github/`.
 
 - [.github/README.md](.github/README.md): Übersicht über die
-  spezialisierten Kursagenten und ihren Einsatzbereich.
+  spezialisierten Kursagenten, ihre Rollen und ihre Einsatzbereiche.
 - [.github/copilot-instructions.md](.github/copilot-instructions.md):
   immer geltende Repository-Regeln für Copilot im Workspace.
+- [.github/agents](.github/agents): konkrete Agent-Dateien für
+  Kursassistenz, Sprachredaktion und Technikcheck.
+
+Die Zuordnung ist bewusst einfach gehalten:
+
+1. `.github/copilot-instructions.md` enthält die allgemeinen,
+   immer aktiven Repository-Regeln.
+2. `.github/README.md` erklärt, welcher Agent für welche Aufgabe gedacht
+   ist.
+3. `.github/agents/*.agent.md` enthält die jeweilige spezialisierte
+   Rollenbeschreibung.
 
 ## Support Und Ressourcen
 

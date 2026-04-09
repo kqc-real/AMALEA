@@ -12,6 +12,16 @@ verbindlichen Docker-Compose-Pfad fuer den Kurs. Diese Datei ist bewusst
 technischer und ergänzt den studentischen Pfad um Betriebs-,
 Fallback- und Troubleshooting-Details.
 
+Für Copilot-gestützte Maintainer-Arbeit sind zusätzlich die Dateien
+unter `.github/` relevant:
+
+- [.github/README.md](.github/README.md): Übersicht über Rollen,
+  Einsatzbereiche und Abgrenzung der Kursagenten.
+- [.github/copilot-instructions.md](.github/copilot-instructions.md):
+  immer geltende Workspace-Regeln für Copilot im Repository.
+- [.github/agents](.github/agents): konkrete Agent-Dateien für
+  Kursassistenz, Sprachredaktion und Technikcheck.
+
 ## Inhalt
 - [Architektur & Module](#architektur--module)
 - [Lokale Entwicklung (Technischer Ausnahmefall)](#lokale-entwicklung-technischer-ausnahmefall)
